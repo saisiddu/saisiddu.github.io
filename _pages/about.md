@@ -8,4 +8,4 @@ redirect_from:
   - /about.html
 ---
 
-This is Sai Nudurupati! Welcome to my website!
+This is Sai Nudurupati! Welcome to my website! This site is under construction.
