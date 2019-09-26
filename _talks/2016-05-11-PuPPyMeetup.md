@@ -3,7 +3,7 @@ title: "Are All Forest Fires Evil?"
 collection: talks
 type: "Talk"
 permalink: /talks/2016-05-11-PuPPyMeetup
-venue: "Seattle, WA"
+venue: ""
 date: 2016-05-11
 location: "Seattle, Washington"
 ---
