@@ -3,7 +3,7 @@ title: "Distributed Ecohydrologic Modeling using a Cellular Automaton Approach i
 collection: talks
 type: "Poster"
 permalink: /talks/2015-09-20-UWPCC-poster
-venue: ""
+venue: "UW PCC Summer Institute 2015"
 date: 2015-09-20
 location: "Friday Harbor, Washington"
 ---

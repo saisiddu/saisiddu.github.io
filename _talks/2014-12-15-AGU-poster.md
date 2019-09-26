@@ -3,7 +3,7 @@ title: "Modeling Elevation and Aspect Controls on Emerging Ecohydrologic Process
 collection: talks
 type: "Poster"
 permalink: /talks/2014-12-15-AGU-poster
-venue: ""
+venue: "American Geophysical Union (AGU) Fall Meeting 2014"
 date: 2014-12-15
 location: "San Francisco, California"
 ---

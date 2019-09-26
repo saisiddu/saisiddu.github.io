@@ -3,8 +3,8 @@ title: "Disturbance Hydro-eco-geomorphology: How do the Watershed Systems Respon
 collection: talks
 type: "Poster"
 permalink: /talks/2018-12-10-AGU-iposter
-venue: ""
-date: 2015-12-14
+venue: "AGU Fall Meeting 2018"
+date: 2018-12-10
 location: "Washington D.C."
 ---
 
