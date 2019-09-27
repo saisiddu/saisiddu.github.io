@@ -1,0 +1,13 @@
+---
+permalink: /contact/
+title: "Contact"
+excerpt: "Contact me"
+author_profile: true
+---
+Please find my contact information below. You can find this information in the side bar.
+
+* E-mail: saisiddu [at] gmail.com
+* Twitter: [saisiddu](http://twitter.com/saisiddu)
+* Google Scholar: [author: Sai Siddhartha Nudurupati](https://scholar.google.com/citations?user=v2NaPnsAAAAJ&hl=en)
+* LinkedIn: [Sai S. Nudurupati](https://www.linkedin.com/in/sai-s-nudurupati)
+* UW-Seattle: [Watershed Dynamics Group](http://www.uwwatersheddynamics.com/)

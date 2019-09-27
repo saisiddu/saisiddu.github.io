@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Civil & Environmental Engineering, University of Washington, 2020 (expected)
-* M.S. in Engineering Mechanics, University of Nebraska - Lincoln, Lincoln, NE, USA, 2012
-* M.S. in Mechanical Engineering, University of Nebraska - Lincoln, Lincoln, NE, USA, 2012
+* Ph.D in Civil & Environmental Engineering, University of Washington, Seattle, WA, 2020 (expected)
+* M.S. in Engineering Mechanics, University of Nebraska, Lincoln, NE, 2012
+* M.S. in Mechanical Engineering, University of Nebraska, Lincoln, NE, 2012
 * B.Tech. in Mechanical Engineering, JNTU, Hyderabad, India, 2006
 
 Work experience
