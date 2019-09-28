@@ -4,7 +4,7 @@ title: "Contact"
 excerpt: "Contact me"
 author_profile: true
 ---
-Please find my contact information below. You can find this information in the side bar.
+Please find my contact information below.
 
 * E-mail: saisiddu [at] gmail.com
 * Twitter: [saisiddu](http://twitter.com/saisiddu)
