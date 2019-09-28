@@ -54,21 +54,18 @@ Puget Sound Programming in Python (PuPPy) meetup, Seattle, WA
 
 Skills
 ======
-* Python
-  * Numpy
-  * Scipy
-  * Pandas
-  * Matplotlib
-  * Xarray
-  * BeautifulSoup
-  * Scikit-learn
-* ArcGIS
-* Matlab
-* C++
-* C
-* AutoCAD
-* ProE
-* Solidworks
+* Software
+  * Python
+    * Numpy, Scipy, Pandas, Matplotlib, Xarray,
+      BeautifulSoup, Scikit-learn
+  * Matlab
+  * C++ & C
+* Geospatial:
+  * ArcGIS
+* Other:
+  * AutoCAD
+  * ProE
+  * Solidworks
 
 
 Publications
