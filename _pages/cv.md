@@ -12,14 +12,14 @@ redirect_from:
 Education
 ======
 ***Ph.D.*** in Civil & Environmental Engineering, University of Washington, Seattle, WA, 2020 (expected)
-  * Dissertation: *Development of an open-source ecohydrology model using Landlab with applications in global change research.*
-  * Advisor: [*prof. erkan istanbulluoglu*](https://www.ce.washington.edu/facultyfinder/erkan-istanbulluoglu)
+  * Dissertation: **Development of an open-source ecohydrology model using Landlab with applications in global change research.**
+  * Advisor: [***Prof. Erkan Istanbulluoglu***](https://www.ce.washington.edu/facultyfinder/erkan-istanbulluoglu)
 
 ***M.S.*** in Engineering Mechanics, University of Nebraska, Lincoln, NE, 2012
 
 ***M.S.*** in Mechanical Engineering, University of Nebraska, Lincoln, NE, 2012
-  * Thesis: *Error Reduction and Effect of Step Size in Adjustment Calculus for Cam Applications.*
-  * Advisor: *Dr. Weislaw Szydlowski*
+  * Thesis: **Error Reduction and Effect of Step Size in Adjustment Calculus for Cam Applications.**
+  * Advisor: ***Dr. Weislaw Szydlowski***
 
 ***B.Tech.*** in Mechanical Engineering, JNTU, Hyderabad, India, 2006
 
