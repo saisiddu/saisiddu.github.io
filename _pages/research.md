@@ -2,7 +2,7 @@
 permalink: /research/
 title: "Research"
 excerpt: "My Research"
-author_profile: true
+author_profile: false
 ---
 
 Like I mentioned in the other page, I am investigating the influence 
