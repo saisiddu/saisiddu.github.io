@@ -2,7 +2,7 @@
 permalink: /research/
 title: "Research"
 excerpt: "My Research"
-author_profile: false
+author_profile: true
 ---
 
 Like I mentioned in the other page, I am investigating the influence 
@@ -11,7 +11,7 @@ of terrain characteristics, climate, and disturbance
 organization, that is a resultant of competition between
 various plant species such as trees, shrubs, and grass.
 The watersheds I have looked at in the past are from
-Sevilleta National Wildlife Refuge (SNWR) near Soccorro, New Mexico,
+Sevilleta National Wildlife Refuge (SNWR) near Socorro, New Mexico,
 and Bartha Brother Ranch (BBR), Nebraska.
 
 My research workflow typically includes the following steps:
