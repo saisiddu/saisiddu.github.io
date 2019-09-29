@@ -20,4 +20,4 @@ My research workflow typically includes the following steps:
 * hypothesize the processes involved
 * create numerical models using ***[Landlab]( http://landlab.github.io/#/)***
 * analyze the results and cross-check with observations
-* repeat few or all of the above steps - >*'Re'search*
+* repeat few or all of the above steps - > *'Re'search*

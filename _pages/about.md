@@ -26,7 +26,6 @@ to maintain a repository of tools that help building, coupling,
 and exploring 2D numerical models. I have contributed well-documented,
  unit-tested, and doc-tested code for components
 Checkout the following pages;
-
 [papers](https://github.com/landlab/landlab/wiki/Landlab-Papers-and-Presentations),
 [workshops](https://github.com/landlab/landlab/wiki/Landlab-Clinics-and-Workshops),
 and [tutorials](https://github.com/landlab/landlab/wiki/Tutorials)
