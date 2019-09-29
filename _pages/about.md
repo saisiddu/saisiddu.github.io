@@ -14,16 +14,19 @@ I am an ecohydrologist, with a background in Mechanical Engineering.
 
 I am studying how climate influences vegetation dynamics in semi-arid 
 landscapes of southwest United States. I use numerical modeling to 
-understand and hypothesize the influence of terrain characteristics, 
+investigate the influence of terrain characteristics, 
 climate, and disturbance (like wildfires and grazing) variability on 
 competition between various plant species, and the resulting 
-vegetation organization.
+vegetation organization. 
 
 I am a developer of ***[Landlab]( http://landlab.github.io/#/)***, 
 an **open-source Python toolkit** used to create land surface models.
 *Landlab* is a collaborative effort, geared towards engaging the community
 to maintain a repository of tools that help building, coupling,
-and exploring 2D numerical models. Checkout the following pages;
+and exploring 2D numerical models. I have contributed well-documented,
+ unit-tested, and doc-tested code for components
+Checkout the following pages;
+
 [papers](https://github.com/landlab/landlab/wiki/Landlab-Papers-and-Presentations),
 [workshops](https://github.com/landlab/landlab/wiki/Landlab-Clinics-and-Workshops),
 and [tutorials](https://github.com/landlab/landlab/wiki/Tutorials)
