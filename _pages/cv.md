@@ -24,6 +24,30 @@ Education
 ***B.Tech.*** in Mechanical Engineering, JNTU, Hyderabad, India, 2006
 
 
+Skills
+======
+* Software
+  * Python
+    * Numpy, Scipy, Pandas, Matplotlib, Xarray,
+      BeautifulSoup, Scikit-learn
+  * Matlab
+  * C++ & C
+* Geospatial:
+  * ArcGIS
+* Other:
+  * AutoCAD
+  * ProE
+  * Solidworks
+
+
+Service and leadership
+======
+***Founder & Organizer***, ***[Scientific Computing Meetup](https://github.com/PuPPy-Python/Scientific_Computing)***
+Puget Sound Programming in Python (***[PuPPy](https://www.meetup.com/PSPPython/)***) meetup, Seattle, WA  [Sep 2017 - Present]
+* Designed and formalized monthly meeting schedule and organized monthly meetups
+* Organized ‘Introduction to Machine Learning’ workshop in August 2018 and raised funds for PuPPy
+
+
 Work experience
 ======
 ***Research Assistant***, Department of Civil & Environmental Engineering
@@ -42,30 +66,6 @@ University of Nebraska, Lincoln, NE  [Jan 2010 - Jun 2011]
 ***Student Worker***, Department of Natural Resources
 University of Nebraska, Lincoln, NE  [Jan 2009 - Aug 2009]
 * Modeled Aeolian dunes using numerical model developed in Matlab and investigated the effect of environmental conditions on formation of these dunes
-
-
-Service and leadership
-======
-***Founder & Organizer***, Scientific Computing Meetup
-Puget Sound Programming in Python (PuPPy) meetup, Seattle, WA  [Sep 2017 - Present]
-* Designed and formalized monthly meeting schedule and organized monthly meetups
-* Organized ‘Introduction to Machine Learning’ workshop in August 2018 and raised funds for PuPPy
-
-
-Skills
-======
-* Software
-  * Python
-    * Numpy, Scipy, Pandas, Matplotlib, Xarray,
-      BeautifulSoup, Scikit-learn
-  * Matlab
-  * C++ & C
-* Geospatial:
-  * ArcGIS
-* Other:
-  * AutoCAD
-  * ProE
-  * Solidworks
 
 
 Publications
