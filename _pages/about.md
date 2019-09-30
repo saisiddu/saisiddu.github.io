@@ -33,11 +33,11 @@ Checkout the following pages;
 and [tutorials](https://github.com/landlab/landlab/wiki/Tutorials)
 to learn more about *Landlab*. I would also recommend checking out
 the *Landlab* resources available on ***[Hydroshare](https://www.hydroshare.org/)***.
-*Hydroshare* is a wonderful web based hydrologic information system
+*Hydroshare* is a web based hydrologic information system
 designed for users to share and publish data and models.
 
 Apart from writing code and working with papers, I like playing badminton. 
-I also enjoy hiking and biking in this beautiful Pacific Northwest.
+I also enjoy hiking and biking.
 I enjoy watching Cricket (the game) and 
 American football (both college and NFL).
 
