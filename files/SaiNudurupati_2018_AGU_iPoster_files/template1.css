@@ -1,0 +1,208 @@
+﻿/*Christer removed body background color and added overflow: hidden*/
+body {
+    /*    background-color: rgba(155,156,157,1) !important;*/
+    font-family: 'P22JohnstonUndergroundW 945068';
+}
+/*Christer added overflow: hidden when box open*/
+.redactor-open {
+    overflow: hidden;
+}
+
+.visual strong {
+    font-family: 'P22JohnstonUndergroundW 945065';
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Trade Gothic LT W01 Bold';
+}
+
+#main h2 {
+    font-family: 'P22JohnstonUndergroundW 945068';
+}
+
+/*.emaac2017 div#popuptextbox, .iposter div#popuptextbox, .paraguay-tephinet div#popuptextbox {
+    max-width: 900px;
+}*/
+
+/*Christer: template 1 css*/
+@supports (-webkit-line-clamp: 1) {
+    #iTitleField1, #iTitleField2, #iTitleField3, #iTitleField4, #iTitleField5 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        height: 3vw !important;
+        padding: 0.78vw 0.5vw 0.47vw 0vw;
+    }
+
+    .wrapper__minify #iTitleField1, .wrapper__minify #iTitleField2, .wrapper__minify #iTitleField3, .wrapper__minify #iTitleField4, .wrapper__minify #iTitleField5 {
+        display: block !important;
+    }
+}
+
+    .scrollable-area {
+        height: 12vw !important;
+    }
+
+    .block {
+        height: 18.7vw !important;
+    }
+
+        .block.bg1 {
+            height: 41.05vw !important;
+        }
+
+            .block.bg1 .scrollable-area {
+                min-height: 34.4vw;
+            }
+
+    .template1 .block .more span {
+        line-height: 0.3vw !important;
+        background-size: 4.3vw !important;
+    }
+    /*Christer: changed position of popup textbox to reveal header*/
+    .kiosk #popuptextbox {
+        top: 10.3vw !important;
+        height: 46vw !important;
+        width: 45.4vw !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #popuptextbox {
+        display: flex;
+        flex-direction: column;
+        width: 45.4vw !important;
+    }
+
+.texttitle {
+    min-height: inherit !important;
+    flex: 0;
+}
+
+    #popuptextbox .content {
+        height: auto !important;
+        max-height: 87.5% !important;
+        flex: auto;
+        margin-bottom: 1vw;
+    }
+
+    .kiosk #popuptextboxback {
+        /*z-index: 98 !important;
+    position: absolute !important;*/
+        top: 10.3vw !important;
+    }
+    /*#header {
+        z-index: 99 !important;
+        position: relative !important;
+    }*/
+    /*Christer added css code for the editor*/
+    .dark-skin-nav .column .block1 {
+        height: 17.3vw !important;
+        padding: 1vw 2vw;
+        margin: 0 0 4vw;
+    }
+
+    .dark-skin-nav .column .block3 {
+        height: 17.3vw !important;
+        padding: 1vw 2vw;
+        margin: 0 0 4vw;
+    }
+
+    .dark-skin-nav .column .block4 {
+        height: 23vw !important;
+        padding: 1vw 2vw;
+        margin: 0 0 4vw;
+    }
+
+    .dark-skin-nav .column .block2 {
+        height: 23vw !important;
+        padding: 1vw 2vw;
+        margin: 0 0 4vw;
+    }
+
+    .dark-skin-nav .column .block.bg1 {
+        height: 46.2vw !important;
+        padding: 1vw 2vw;
+        margin: 0 0 4vw;
+    }
+
+    .dark-skin-nav .column .block.edited {
+        height: 45.7vw !important;
+    }
+
+    .block.bg1.edited {
+        height: 47.6vw !important;
+    }
+
+    .dark-skin-nav .holder {
+        padding: 0 0 0 6vw !important;
+    }
+
+    .dark-skin-nav .block2 .scrollable-area, .dark-skin-nav .block2 .scrollable-area-wrapper {
+        height: 16.2vw !important;
+    }
+
+    .dark-skin-nav .block2.edited .scrollable-area, .dark-skin-nav .block2.edited .scrollable-area-wrapper {
+        height: 39vw !important;
+    }
+
+    .dark-skin-nav .block4 .scrollable-area, .dark-skin-nav .block4 .scrollable-area-wrapper {
+        height: 16.2vw !important;
+    }
+
+    .dark-skin-nav .block4.edited .scrollable-area, .dark-skin-nav .block4.edited .scrollable-area-wrapper {
+        height: 39vw !important;
+    }
+
+    .dark-skin-nav .block3 .scrollable-area, .dark-skin-nav .block3 .scrollable-area-wrapper {
+        height: 10.5vw !important;
+    }
+
+    .dark-skin-nav .block3.edited .scrollable-area, .dark-skin-nav .block3.edited .scrollable-area-wrapper {
+        height: 39vw !important;
+    }
+
+    .dark-skin-nav .block1 .scrollable-area, .dark-skin-nav .block1 .scrollable-area-wrapper {
+        height: 10.5vw !important;
+    }
+
+    .dark-skin-nav .block1.edited .scrollable-area, .dark-skin-nav .block1.edited .scrollable-area-wrapper {
+        height: 39vw !important;
+    }
+
+    .dark-skin-nav .block.bg1 .scrollable-area, .dark-skin-nav .block.bg1 .scrollable-area-wrapper {
+        height: 39.5vw !important;
+    }
+
+    .dark-skin-nav .block.bg1.edited .scrollable-area, .dark-skin-nav .block.bg1.edited .scrollable-area-wrapper {
+        height: 39vw !important;
+    }
+
+    .dark-skin-nav .edited .scrollable-area {
+        height: 40.7vw !important;
+    }
+
+    .block.edited {
+        top: 5vw !important;
+    }
+
+    .dark-skin-nav .column .block h2 {
+        font-size: 1.6vw;
+        line-height: 2vw;
+        font-weight: normal;
+        margin: 0;
+        padding: 0vw 0 0.5vw;
+        /*min-height: 3vw;*/
+    }
+    /*Christer End of added css code for the editor*/
+    .assh h2#iTitleField1, .assh h2#iTitleField2, .assh h2#iTitleField3, .assh h2#iTitleField4, .assh h2#iTitleField5 {
+        background-color: #f15500;
+        margin: -1vw -2vw 1vw -2vw;
+        padding: 1.2vw 0vw 0vw 1vw;
+    }
+
+.assh .texttitle {
+    background: rgb(241, 85, 0) !important;
+}

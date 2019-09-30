@@ -1,0 +1,593 @@
+﻿var droparea, dropareabox, dropalternative, targetElement, replaceElement, triggermodal = null,
+    drop_file_here = 'Drop file here',
+    editw = 'edit',
+    deletew = 'delete',
+    uploaded__inserted = 'UPLOADED & INSERTED',
+    uploading_please_wait = 'UPLOADING. PLEASE WAIT.',
+    upload_failed_error_message = 'UPLOAD FAILED. ERROR MESSAGE',
+    upload_failed_please_try_again_or_contact_support = 'UPLOAD FAILED. PLEASE TRY AGAIN OR CONTACT SUPPORT.',
+    file_uploaded = 'FILE UPLOADED.',
+    doChangeBackgroundImage = false;
+
+$(function () {
+    initUpload();
+});
+
+function initUpload() {
+    $('.redactorUpload_btn_modal_close,#redactorUpload_modal_close').click(function () {
+        resetEdit();
+        return false;
+    });
+    $('#redactorUpload_tabs a.upload').click(function () {
+        $('#redactorUpload_tabs a').removeClass('redactorUpload_tabs_act');
+        $(this).addClass('redactorUpload_tabs_act');
+
+        $('#redactorUpload_tab1').show();
+        $('#redactorUpload_tab2').hide();
+
+        return false;
+    });
+    $('#redactorUpload_tabs a.choose').click(function () {
+        $('#redactorUpload_tabs a').removeClass('redactorUpload_tabs_act');
+        $(this).addClass('redactorUpload_tabs_act');
+
+        $('#redactorUpload_tab1').hide();
+        $('#redactorUpload_tab2').show();
+
+        return false;
+    });
+}
+var done = false;
+
+function loadUpload(el, re, posteditclickID) {
+    $('#redactorUpload_modal,#edit-background').show();
+
+    targetElement = el;
+    replaceElement = re;
+    triggermodal = posteditclickID + '' != 'undefined' ? posteditclickID : null;
+
+    $('#redactorUpload_image_box').html('');
+    $('.redactorUpload_dropareabox').text(drop_file_here).removeClass('drop');
+
+    //load library
+    loadUploadLibrary(el, re);
+
+    // dragupload
+    if (!isMobile()) {
+        if ($('#redactorUpload_file').length) {
+            draguploadInit('#redactorUpload_file');
+        }
+    }
+
+    //regular upload
+    uploadInit('redactorUpload_file');
+
+}
+
+function loadUploadLibrary(targetElement, replaceElement) {
+    loadImages();
+    $('#redactorUpload_image_box').empty();
+    var d = new Date();
+    $.getJSON('/ImagesForRedactor.aspx?tick=' + d.getTime(), $.proxy(function (data) {
+
+        var folders = {}, count = 0;
+
+        // folders
+        $.each(data, $.proxy(function (key, val) {
+            if (typeof val.folder !== 'undefined') {
+                count++;
+                folders[val.folder] = count;
+            }
+
+        }, this));
+
+        var folderclass = false;
+
+        $.each(data, $.proxy(function (key, val) {
+            // title
+            var thumbtitle = '';
+            if (typeof val.title !== 'undefined') thumbtitle = val.title;
+
+            var folderkey = 0;
+            if (!$.isEmptyObject(folders) && typeof val.folder !== 'undefined') {
+                folderkey = folders[val.folder];
+                if (folderclass === false) folderclass = '.redactorUploadfolder' + folderkey;
+            }
+
+            d = new Date();
+            let img;
+
+            if (val.image.indexOf('/GetFile.ashx') === 0)
+                img = $('<div data-image="' + val.image + '"><img src="' + val.thumb + '&reload=' + d.getTime() + '" class="redactorUploadfolder redactorUploadfolder'
+                    + folderkey + '" rel="' + val.image + '&reload=' + d.getTime() + '" /><div class="buttons">'
+                    + '<span class="redactorUploadImageEdit" data-image="' + val.image + '">' + editw + '</span>'
+                    + '<span class="redactorUploadImageDelete" data-image="' + val.image + '">' + deletew + '</span></div></div>');
+            else
+                img = $('<div data-image="' + val.image + '"><img src="' + val.thumb + '" class="redactorUploadfolder redactorUploadfolder'
+                    + folderkey + '" rel="' + val.image + '" /><div class="buttons">'
+                    + '<span class="redactorUploadImageEdit" data-image="' + val.image + '">' + editw + '</span>'
+                    + '<span class="redactorUploadImageDelete" data-image="' + val.image + '">' + deletew + '</span></div></div>');
+            $('#redactorUpload_image_box').append(img);
+
+            //if (targetElement != null && targetElement + '' != 'undefined') {
+            //    $(img).find("img").click(imageThumbClick);
+            //}
+
+            $(img).find('span.redactorUploadImageDelete').click(imageDeleteClick);
+            $(img).find('span.redactorUploadImageEdit').click(imageEditClick);
+
+        }, this));
+    }, this));
+}
+
+function imageThumbClick(e) {
+    var img = '<img src="' + $(e.target).attr('rel') + '" />';
+
+    if (!replaceElement)
+        targetElement.html(img);
+    else
+        targetElement.replaceWith(img);
+
+    newDivEmpty = false;
+    resetEdit();
+    setBackgroundImage($(e.target).attr('rel'));
+}
+
+function imageDeleteClick(e) {
+    $.ajax({
+        type: 'POST',
+        url: '/Templates/iPosters/iPosterService.asmx/DeleteRepositoryImage',
+        data: "{'image':'" + $(e.target).attr('data-image') + "'}",
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        success: function (data) {
+            $(e.target).parent().parent().remove();
+        }
+    });
+}
+
+function imageEditClick(e) {
+    //$("#iframe_imageediting").attr("src", "/Common/Pages/ImageEditor.aspx?image=" + $(e.target).attr('data-image'));
+    $('#iframe_imageediting').attr('src', '/Common/Pages/ImageEditor.aspx?' +
+        'nonew=' + ($(e.target).attr('data-nonew') + '' != 'undefined' ? $(e.target).attr('data-nonew') : 'false') +
+        '&image=' + $(e.target).attr('data-image'));
+
+    $('#open-imageedit').trigger('click');
+
+    //z-index issues
+    $('#fancybox-wrap').addClass('pushup');
+}
+
+function isMobile() {
+    return /(iPhone|iPod|BlackBerry|Android)/.test(navigator.userAgent);
+}
+
+
+function draguploadInit(el) {
+    //this.draguploadOptions = $.extend({
+    //    url: false,
+    //    success: false,
+    //    error: false,
+    //    preview: false,
+    //    uploadFields: false,
+    //    text: this.opts.curLang.drop_file_here,
+    //    atext: this.opts.curLang.or_choose
+    //}, options);
+
+    droparea = $('.redactorUpload_droparea');
+    dropareabox = $('.redactorUpload_dropareabox');
+    dropalternative = $('.redactorUpload_dropalternative');
+
+    if (window.FormData === undefined) return false;
+
+    // drag over
+    dropareabox.on('dragover', $.proxy(function () {
+        return draguploadOndrag();
+
+    }, this));
+
+    // drag leave
+    dropareabox.on('dragleave', $.proxy(function () {
+        return draguploadOndragleave();
+
+    }, this));
+
+    // drop
+    dropareabox.get(0).ondrop = $.proxy(function (e) {
+        e.preventDefault();
+
+        dropareabox.removeClass('hover').addClass('drop');
+
+        //this.handleFileSelect(e);
+        draguploadUpload(e.dataTransfer.files[0]);
+
+    }, this);
+}
+
+function draguploadUpload(file) {
+    startUpload();
+
+    var xhr = jQuery.ajaxSettings.xhr();
+
+    if (xhr.upload) {
+        xhr.upload.addEventListener('progress', $.proxy(this.uploadProgress, this), false);
+    }
+
+    var provider = function () { return xhr; };
+
+    var fd = new FormData();
+
+    // append file data
+    fd.append('file', file);
+
+    $.ajax({
+        url: '/UploadFile.ashx',
+        dataType: 'html',
+        data: fd,
+        xhr: provider,
+        cache: false,
+        contentType: false,
+        processData: false,
+        type: 'POST',
+        success: $.proxy(function (data) {
+            data = data.replace(/^\[/, '');
+            data = data.replace(/\]$/, '');
+
+            var json = $.parseJSON(data);
+
+            if (typeof json.error == 'undefined') {
+                imageInsert(json);
+            }
+            else {
+                failedUpload(json.error);
+                resetEdit();
+                //this.draguploadOptions.error(this, json);
+                //this.draguploadOptions.success(false);
+            }
+
+        },
+            this)
+    });
+
+}
+
+function draguploadOndrag() {
+    dropareabox.addClass('hover');
+    return false;
+}
+
+function draguploadOndragleave() {
+    dropareabox.removeClass('hover');
+    return false;
+}
+
+function uploadProgress(e, text) {
+    var percent = e.loaded ? parseInt(e.loaded / e.total * 100, 10) : e;
+    if (percent < 100)
+        dropareabox.text(loading + ' ' + percent + '% ' + (text || ''));
+    else {
+        dropareabox.text(drop_file_here);
+        dropareabox.removeClass('drop');
+    }
+}
+function setBackgroundImage(url) {
+    if (doChangeBackgroundImage) {
+
+        clearStyle('backgroundColorCSS')
+        $('.temp-background').remove()
+        $('head').append(`<style class="temp-background">#wrapper{background-image: url('${url}')!important;
+        background-position-x: center!important;
+        background-position-y: center!important;
+        background-repeat: no-repeat!important; }</style>`);
+    }
+    doChangeBackgroundImage = false;
+}
+function imageInsert(json) {
+    if (json !== false) {
+        var img = '<img src="' + json.filelink + '" />';
+        setBackgroundImage(json.filelink)
+        newDivEmpty = false;
+
+        //are we inserting/replacing
+        if (targetElement != null && targetElement + '' != 'undefined') {
+            if (!replaceElement)
+                targetElement.html(img);
+            else
+                targetElement.replaceWith(img);
+
+            fileUploadedAndInserted();
+        }
+
+        resetEdit();
+
+        //are we inserting/replacing, if not, re-open image library
+        if (targetElement == null || targetElement + '' == 'undefined') {
+            $('#gallery').trigger('mousedown');
+
+            $('#redactorUpload_tabs .upload').removeClass('redactorUpload_tabs_act');
+            $('#redactorUpload_tabs .choose').addClass('redactorUpload_tabs_act').trigger('click');
+
+            successUpload();
+        }
+    }
+}
+
+
+
+//this.uploadInit('redactor_file', {
+//    auto: true,
+//    url: this.opts.imageUpload,
+//    success: $.proxy(this.imageCallback, this),
+//    error: $.proxy(function (obj, json) {
+//        this.callback('imageUploadError', json);
+
+//    }, this)
+//});
+
+var redUploadOptions = {
+    url: '/UploadFile.ashx',
+    success: false,
+    error: false,
+    start: false,
+    trigger: false,
+    auto: true,
+    input: false
+};
+
+var redElement_action;
+var redElement;
+var redID;
+var redEl;
+var alreadySet = false;
+var icnt = 0;
+var uploadCounterFix = new Array();
+
+function uploadInit(el) {
+    //$(".uploadForm,.uploadIframe").remove();
+
+    uploadCounterFix[icnt] = false;
+
+    var $el = $('#redactorUpload_file');
+
+    // Test input or form
+    //if ($el.length && $el[0].tagName === 'INPUT')
+    //{
+    redUploadOptions.input = $el;
+    redEl = $($el[0].form);
+    //}
+    //else this.el = $el;
+
+    redElement_action = redEl.attr('action');
+
+    // Auto or trigger
+    //if (this.redUploadOptions.auto)
+    //{
+    //var foo = $(this.redUploadOptions.input);
+    //console.log(foo);
+    //$.each(foo.data("events"), function (i, event) {
+    //    alert(i);
+    //    $.each(event, function (j, h) {
+    //        alert(h.handler);
+    //    });
+    //});
+
+    $(this.redUploadOptions.input).change($.proxy(function (e) {
+        redEl.submit(function (e) {
+            return false;
+        });
+
+        if (!uploadCounterFix[icnt]) {
+            uploadCounterFix[icnt] = true;
+            uploadSubmit(e);
+        }
+
+
+    }, this));
+
+    //}
+    //else if (this.redUploadOptions.trigger)
+    //{
+    //    $('#' + this.redUploadOptions.trigger).click($.proxy(this.uploadSubmit, this));
+    //}
+    icnt++;
+}
+
+function uploadSubmit(e) {
+    $('#redactorUpload-progress').fadeIn();
+    uploadForm(redElement, uploadFrame());
+}
+
+function uploadFrame() {
+    redID = 'f' + Math.floor(Math.random() * 99999);
+
+    var d = this.document.createElement('div');
+    var iframe = '<iframe style="display:none" id="' + redID + '" name="' + redID + '" class="uploadIframe"></iframe>';
+
+    d.innerHTML = iframe;
+    $(d).appendTo('body');
+
+    // Start //TODO: WHAT IS THIS??????
+    //if (redUploadOptions.start) redUploadOptions.start();
+
+    $('#' + redID).load($.proxy(uploadLoaded, this));
+
+    return redID;
+}
+
+function uploadForm(f, name) {
+    startUpload();
+    //if (redUploadOptions.input)
+    //{
+    var formId = 'redactorUploadForm' + redID,
+        fileId = 'redactorUploadFile' + redID;
+
+    var form = $('<form  action="' + redUploadOptions.url + '" method="POST" class="uploadForm" target="' + name + '" name="' + formId + '" id="' + formId + '" enctype="multipart/form-data" />');
+
+    //// append hidden fields
+    //if (this.opts.uploadFields !== false && typeof this.opts.uploadFields === 'object')
+    //{
+    //    $.each(this.opts.uploadFields, $.proxy(function(k, v)
+    //    {
+    //        if (v.toString().indexOf('#') === 0) v = $(v).val();
+
+    //        var hidden = $('<input/>', {
+    //            'type': "hidden",
+    //            'name': k,
+    //            'value': v
+    //        });
+
+    //        $(this.form).append(hidden);
+
+    //    }, this));
+    //}
+
+    var oldElement = this.redUploadOptions.input;
+    var newElement = $(oldElement).clone();
+
+    $(oldElement).attr('id', fileId).before(newElement).appendTo(form);
+
+    $(form).css('position', 'absolute')
+        .css('top', '-2000px')
+        .css('left', '-2000px')
+        .appendTo('body');
+
+    form.submit();
+
+    //}
+    //else
+    //{
+    //    f.attr('target', name)
+    //        .attr('method', 'POST')
+    //        .attr('enctype', 'multipart/form-data')
+    //        .attr('action', this.redUploadOptions.url);
+
+    //    redElement.submit();
+    //}
+}
+
+function uploadLoaded() {
+    var i = $('#' + redID)[0], d;
+
+    if (i.contentDocument) d = i.contentDocument;
+    else if (i.contentWindow) d = i.contentWindow.document;
+    else d = window.frames[redID].document;
+
+
+    $('#redactorUpload-progress').hide();
+
+    if (typeof d !== 'undefined') {
+        // Remove bizarre <pre> tag wrappers around our json data:
+        var rawString = d.body.innerHTML;
+
+        if (rawString.match(/\{(.|\n)*\}/) != null) {
+            var jsonString = rawString.match(/\{(.|\n)*\}/)[0];
+
+            jsonString = jsonString.replace(/^\[/, '');
+            jsonString = jsonString.replace(/\]$/, '');
+
+            var json = $.parseJSON(jsonString);
+
+            if (typeof json.error == 'undefined') {
+                imageInsert(json);
+            }
+            else {
+                failedUpload(json.error);
+                resetEdit();
+            }
+        }
+    }
+    else {
+        alert('Upload failed!');
+        resetEdit();
+    }
+
+
+    redEl.attr('action', this.redElement_action);
+    redEl.attr('target', '');
+}
+
+function fileUploadedAndInserted() {
+    $('#loading h3').html(uploaded__inserted);
+
+    $('.loading').show();
+    $('.loading').delay(1400).fadeOut(200);
+    setTimeout(function () { $('#loading h3').html(loading); }, 1800);
+}
+
+function fileUploaded() {
+    $('#loading h3').html(uploading_please_wait);
+
+    $('.loading').css('z-index', '5000001').show();
+    $('.loading').delay(1400).fadeOut(200);
+    setTimeout(function () { $('#loading h3').css('z-index', '').html(loading); }, 1800);
+}
+
+function startUpload() {
+    $('#loading h3').html(uploading_please_wait);
+    $('.loading').css('z-index', '5000001').show();
+}
+
+function failedUpload(errorMessage) {
+    if (errorMessage + '' != 'undefined' && errorMessage != null && errorMessage + '' != '')
+        $('#loading h3').html(upload_failed_error_message + ': ' + errorMessage);
+    else
+        $('#loading h3').html(upload_failed_please_try_again_or_contact_support);
+
+    $('.loading').delay(3500).fadeOut(200);
+    setTimeout(function () { $('#loading h3').css('z-index', '').html(loading); }, 3800);
+}
+
+function successUpload() {
+    $('#loading h3').html(file_uploaded);
+    $('.loading').delay(1500).fadeOut(200);
+    setTimeout(function () { $('#loading h3').css('z-index', '').html(loading); }, 1800);
+}
+
+
+function closeFancyBox(file) {
+
+    console.log('outside the close fancy - 1 !')
+    $('#fancybox-close').trigger('click');
+
+    d = new Date();
+    $("img[src^='/GetFile.ashx']").each(function (index) {
+
+        console.log('inside the close fancy -2 !')
+        var csrc = $(this).attr('src');
+        // csrc=  "http://localhost:30001" + csrc + "&reload=" + d.getTime();
+        //if (csrc.lastIndexOf("reload") > 0) {
+        //    csrc = csrc.substr(0, csrc.lastIndexOf("reload") - 1);
+        //}
+
+        if (csrc.startsWith('https:') && csrc.indexOf('GetFile.ashx') > -1) {
+            csrc = '/' + csrc.substr(csrc.indexOf('GetFile.ashx'), csrc.lastIndexOf('&reload'));
+            if (csrc.indexOf('&reload' > -1)) {
+                csrc = csrc.split('&reload')[0];
+            }
+        }
+        console.log(csrc);
+
+        $(this).attr('src', csrc);
+        console.log($(this).attr('src', csrc));
+
+
+        //$(this).attr("src", csrc + "&reload=" + d.getTime());
+    });
+
+    //special thing for our insert background image thing
+    if (triggermodal != null) {
+
+        setTimeout(function () {
+            $('#fancybox-wrap').removeClass('pushup');
+            $('#open-popupcolors').trigger('click');
+        }, 500);
+    }
+}
+
+function reopenImageLibrary() {
+    if (activeGallery || activeBackgroundInsert)
+        loadUploadLibrary(targetElement, replaceElement);
+
+    if (activeDiv)
+        activeDiv.redactor('getObject').loadImageLibrary();
+}

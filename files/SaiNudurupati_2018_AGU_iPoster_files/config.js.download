@@ -1,0 +1,177 @@
+/**
+ * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or http://ckeditor.com/license
+ */
+
+CKEDITOR.editorConfig = function (config) {
+    // Define changes to default configuration here.
+    // For complete reference see:
+    // http://docs.ckeditor.com/#!/api/CKEDITOR.config
+
+    // The toolbar groups arrangement, optimized for two toolbar rows.
+    config.toolbarGroups = [
+        //{ name: 'editing', groups: ['find', 'selection', 'spellchecker'] },
+        { name: 'document', groups: ['mode', 'document', 'doctools'] },
+        { name: 'clipboard', groups: ['clipboard', 'undo'] },
+        { name: 'insert' },
+        { name: 'tools' },
+        { name: 'others' },
+        { name: 'links' },
+        '/',
+        { name: 'basicstyles', groups: ['basicstyles'] },
+        { name: 'paragraph', groups: ['list', 'align', 'bidi'] },
+        { name: 'cleanup', groups: ['cleanup'] },
+        '/',
+        { name: 'colors' },
+        { name: 'styles', groups: ['Format', 'Font', 'FontSize'] },
+    ];
+
+    // Remove some buttons provided by the standard plugins, which are
+    // not needed in the Standard(s) toolbar.
+    config.removeButtons = 'Strike,Copy,Cut,Paste,Anchor,Styles';
+
+    // Set the most common block elements.
+    config.format_tags = 'p;h1;h2;h3';
+
+    // Simplify the dialog windows.
+    config.removeDialogTabs = 'image:advanced;image:Link;link:advanced;link:upload,link:target';
+
+    config.extraPlugins = 'dragresize';
+
+    config.filebrowserUploadUrl = '/uploadfile.ashx';
+
+    config.embed_provider = '//noembed.com/embed?url\x3d{url}\x26callback\x3d{callback}';
+    ////ckeditor.iframe.ly/api/oembed?url\x3d{url}\x26callback\x3d{callback}
+
+    config.baseFloatZIndex = 1000000;
+    config.forcePasteAsPlainText = true;
+    config.pasteFromWordRemoveFontStyles = true;
+    config.pasteFromWordRemoveStyles = true;
+    //config.toolbarLocation = 'top';
+    config.removePlugins = 'pastefromword';
+    //config.toolbarLocation = 'top';
+
+    //config.allowedContent = 'strong em';
+    //config.disallowedContent = 'b';
+
+    //config.allowedContent = {
+    //    $1: {
+    //        // Use the ability to specify elements as an object.
+    //        elements: CKEDITOR.dtd,
+    //        attributes: true,
+    //        styles: true,
+    //        classes: true
+    //    }
+    //};
+    //config.disallowedContent = 'i, b';
+};
+//display image alert while copy/paste directly on ckeditor
+CKEDITOR.on('instanceReady', function (ev) {
+    
+    ev.editor.on('paste', function (evt) {
+      
+        //evt.data.dataValue = '<!--class="Mso"-->' + evt.data.dataValue;
+        var test = evt.data.dataValue.indexOf("base64");
+        //$('evt.data.dataValue').find('img[src*="base64"]')
+        //$(evt.data.dataValue).attr('src').indexOf('base64')
+        //if (test > -1) {
+        //    evt.data.dataValue.replace(/<img[^>]*>/g, "");
+        //}        
+        if (evt.data.dataValue.indexOf('<v:imagedata src') > -1 || evt.data.dataValue.indexOf('<img') > -1 || evt.data.dataTransfer.$.files.length > 0 || evt.data.dataValue.indexOf('&lt;img') > -1) {
+
+            if (evt.data.dataValue.indexOf('<img') > -1 || evt.data.dataTransfer.$.files.length > 0 || evt.data.dataValue.indexOf('&lt;img') > -1) {
+
+                evt.data.dataValue.replace(/<img[^>]*>/g, "");
+                alert('Please note: you cannot add an image into a textbox by using drag-and-drop or copy-paste.\n\n To add an image, use the Image button in the textbox toolbar.');
+                return false;
+            }
+            if (evt.data.dataValue.indexOf('<v:imagedata src') > -1 || evt.data.dataTransfer.$.files.length > 0 || evt.data.dataValue.indexOf('&lt;img') > -1) {
+                evt.data.dataValue.replace(/<v:imagedata src[^>]*>/g, "");
+                alert('Please note: you cannot add an image into a textbox by using drag-and-drop or copy-paste.\n\n To add an image, use the Image button in the textbox toolbar.');
+                return false;
+            }
+
+        }
+    }, null, null, 2);
+
+    ev.editor.document.on('DOMNodeInserted', function (ev) {
+        var target = ev.data.getTarget();
+        if (target.is && target.is('img') && target.getAttribute('src') && target.getAttribute('src').substr(0, 5) === 'data:') {
+            target.remove();
+        }
+    });
+});
+//CKEDITOR.on('instanceReady', function (ev) {
+//    ev.editor.on('paste', function (evt) {
+//        evt.data.dataValue = '<!--class="Mso"-->' + evt.data.dataValue;
+//    }, null, null, 2);
+//});
+
+/**
+ * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or http://ckeditor.com/license
+ */
+
+//CKEDITOR.editorConfig = function (config) {
+//    // Define changes to default configuration here.
+//    // For complete reference see:
+//    // http://docs.ckeditor.com/#!/api/CKEDITOR.config
+
+//    // The toolbar groups arrangement, optimized for two toolbar rows.
+//    config.toolbar = [
+//        {
+//            name: 'top', items: ['Templates', '-', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo', '-',
+//                'Find', 'Replace', '-', 'Scayt', '-', 'Image', 'Embed', 'Html5Audio', '-',
+//                'Glyphicons', 'Symbol']
+//        },
+//        '/',
+//        {
+//            name: 'middle', items: ['Bold', 'Italic', 'Strike', 'Superscript', 'Subscript', 'TextColor', 'BGColor', '-',
+//                'CopyFormatting', 'RemoveFormat', 'NumberedList', 'BulletedList', '-', 'Mathjax', 'Chart']
+//        },
+//        '/',
+//        { name: 'bottom', items: ['Styles', 'Format', 'Font'] },
+//    ];
+
+//    // Remove some buttons provided by the standard plugins, which are
+//    // not needed in the Standard(s) toolbar.
+//    config.removeButtons = 'Underline';
+
+//    // Set the most common block elements.
+//    config.format_tags = 'p;h1;h2;h3;pre';
+
+//    // Simplify the dialog windows.
+//    config.removeDialogTabs = '';
+//};
+
+// Christers toolbar config
+/*
+CKEDITOR.editorConfig = function (config) {
+    config.toolbar = [
+        { name: 'clipboard', items: ['PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
+        { name: 'insert', items: ['Image', 'SpecialChar'] },
+        { name: 'links', items: ['Link', 'Unlink'] },
+        '/',
+        { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-',] },
+        { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+        { name: 'basicstyles', items: ['RemoveFormat'] },
+        '/',
+        '/',
+        { name: 'colors', items: ['TextColor', 'BGColor'] },
+        { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+    ];
+};*/
+
+//config.allowedContent = 'Strike';
+//config.disallowedContent = 'Italic, h1, h2, h3, p';
+
+//config.allowedContent = {
+//    $1: {
+//        // Use the ability to specify elements as an object.
+//        elements: CKEDITOR.dtd,
+//        attributes: true,
+//        styles: true,
+//        classes: true
+//    }
+//};
+//config.disallowedContent = 'strong';

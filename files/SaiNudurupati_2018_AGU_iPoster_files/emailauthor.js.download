@@ -1,0 +1,220 @@
+﻿
+$(function () {
+    if ($("body").hasClass("swe"))
+        jsKeyboard.init("virtualKeyboard", "swe");
+    else
+        jsKeyboard.init("virtualKeyboard", "default");
+
+    $(".emailauthorbutton").on("mousedown", function () {
+        $(".kbcontainersendposterrequest").show();
+        //first input focus
+        var $firstInput = $('.emailname').focus();
+        jsKeyboard.currentElement = $firstInput;
+        jsKeyboard.currentElementCursorPosition = 0;
+    });
+        
+    $('.closekeyboardlink')
+    .click(function (e) {
+        $(".kbcontainersendposterrequest").hide();
+        $(".emailname").val('');
+        $(".emailsender").val('');
+        $(".emailbody").val('');
+        e.stopPropagation();
+            return false;
+        });
+    $(".sendemaillink").on("mousedown", function (event) {
+
+        $("#loading h3").html("SENDING MESSAGE");
+        $(".loading").show();
+
+        event.stopImmediatePropagation();
+        
+        var dataString = JSON.stringify({
+            name: $(".emailname").val(),
+            email: $(".emailsender").val(),
+            message: $(".emailbody").val(),
+            shortname: $("#PageShortName").val()
+        });
+        $.ajax({
+            type: "POST",
+            url: "/Service.asmx/SendMessage",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: dataString,
+            success: function (data) {
+                var result = data.d;
+                if (result) {
+
+                    $("#loading h3").html("MESSAGE SENT");
+
+                    $(".emailname").val('');
+                    $(".emailsender").val('');
+                    $(".emailbody").val('');
+
+                    setTimeout(function () { 
+                        $(".loading").hide();
+                        $("#loading h3").html("LOADING");
+
+                        $(".kbcontainer").hide();
+                    }, 1500);
+
+                } else {
+                    alert('Unknown Error.');
+
+                    $(".loading").hide();
+                    $("#loading h3").html("LOADING");
+                }
+            },
+            error: function (result, a, b) {
+                alert("Unknown Error: " + a + ";" + b);
+
+                $(".loading").hide();
+                $("#loading h3").html("LOADING");
+            }
+        });
+    });
+    
+
+    /*share iposter on gallery screen */
+    if ($("body").hasClass("swe"))
+        jsKeyboard.init("virtualKeyboardshareposter", "swe");
+    else
+        jsKeyboard.init("virtualKeyboardshareposter", "default");
+
+    $(".shareemailauthorbutton").on("mousedown", function () {
+
+        $(".kbcontainershareposter").show();
+        //first input focus
+        var $firstInput = $('.shareemailname').focus();
+        jsKeyboard.currentElement = $firstInput;
+        jsKeyboard.currentElementCursorPosition = 0;
+    });
+
+    $('.shareclosekeyboardlink').click(function (e) {
+        $(".kbcontainershareposter").hide();
+        $(".shareemailname").val('');          
+            e.stopPropagation();
+            return false;
+    });
+
+    $("#getiPosterLinkForm").submit(function (event)
+    {
+        if ($('#getiPosterLinkForm').validator('validate').has('.has-error').length > 0)
+        {
+          // handle the invalid form...
+             console.log('form not valid ');
+             return false;
+        }
+       if (!validateEmail($(".shareemailname").val()))
+         { 
+             $("#alert-not-valid-email").show();
+             $("#alert-something-went-wrong").hide();
+             $("#alert-success-message").hide();
+             return false;
+         }
+        // everything looks good!
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        $("#loading h3").html("SENDING MESSAGE");
+        $(".loading").show();
+        var url = window.location+'';
+        var dataString =JSON.stringify({email:$(".shareemailname").val(),shortname:$("#PageShortName").val(), publicUrl:url});
+        $.ajax({
+            type: "POST",
+            url: "/Service.asmx/ShareiPosterRequest",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: dataString,
+            success: function (data) {
+                var result = data.d;
+                if (result)
+                {
+                    $("#loading h3").html("MESSAGE SENT");
+                    $(".shareemailname").val('');
+                    $(".loading").hide();
+                    $("#loading h3").html("LOADING");
+                    $("#alert-not-valid-email").hide();
+                    $("#alert-something-went-wrong").hide();
+                    $("#alert-success-message").show();                    
+                } else
+                {
+                    $("#alert-not-valid-email").hide();
+                    $("#alert-something-went-wrong").show();
+                    $("#alert-success-message").hide();
+                    $(".loading").hide();
+                    $("#loading h3").html("LOADING");
+                }
+            },
+            error: function (result, a, b) {
+                $("#alert-not-valid-email").hide();
+                $("#alert-something-went-wrong").show();
+                $("#alert-success-message").hide();
+                $(".loading").hide();
+                $("#loading h3").html("LOADING");
+            }
+        });
+        return false;
+    });
+
+    /*
+    $(".shareemaillink").on("mousedown", function (event) {
+
+        $("#loading h3").html("SENDING MESSAGE");
+        $(".loading").show();
+
+        event.stopImmediatePropagation();
+        var url = window.location;
+        var dataString = "{'email':'" + $(".shareemailname").val() + "','shortname':'" + $("#PageShortName").val() + "', 'publicUrl':'" + url + "'}";
+        $.ajax({
+            type: "POST",
+            url: "/Service.asmx/ShareiPosterRequest",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: dataString,
+            success: function (data) {
+                var result = data.d;
+                if (result) {
+
+                    $("#loading h3").html("MESSAGE SENT");
+
+                    $(".shareemailname").val('');
+                   setTimeout(function () {
+                        $(".loading").hide();
+                        $("#loading h3").html("LOADING");
+
+                        $(".kbcontainershareposter").hide();
+                    }, 1500);
+
+                } else {
+                    alert('Unknown Error.');
+
+                    $(".loading").hide();
+                    $("#loading h3").html("LOADING");
+                }
+            },
+            error: function (result, a, b) {
+                alert("Unknown Error: " + a + ";" + b);
+                $(".loading").hide();
+                $("#loading h3").html("LOADING");
+            }
+        });
+    });
+    */
+    /*share iposter on gallery screen */
+
+    function validateEmail($email) {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        return emailReg.test($email);
+    }
+});
+
+
+
+//$(".closekeyboardlink").on("mousedown", function (event) {
+    //    $(".kbcontainer").hide();
+    //    $(".emailname").val('');
+    //    $(".emailsender").val('');
+    //    $(".emailbody").val('');
+    //    event.stopPropagation();
+    //    return false;
+    //});

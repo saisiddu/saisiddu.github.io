@@ -1,0 +1,915 @@
+﻿var isAuthor = false;
+
+$(function () {
+    //setScreen(false);
+    // Declare a proxy to reference the hub. 
+    //var chatHub = $.connection.chatHub;
+    //registerClientMethods(chatHub);
+    // Start Hub
+    //$.connection.hub.start().done(function () {
+    //    registerEvents(chatHub)
+    //});
+    //$(".btn_Start_Chat").click(function () {
+    //    var chatHub = $.connection.chatHub;
+    //    // Declare a proxy to reference the hub. 
+    //    registerClientMethods(chatHub);
+    //    $.connection.hub.start().done(function () {
+
+    //        registerEvents(chatHub)
+
+    //    });
+    //});
+    $("#popup-chat").parent("div").parent("#fancybox-content").parent("div").parent("#fancybox-wrap").addClass("ChatBoxContet");
+    //var fancybox_content = $("#popup-chat").parent("div").parent("#fancybox-content");
+    //var fancybox_wrap = fancybox_content.parent("div").parent("#fancybox-wrap");
+    //var fancybox_overlay = fancybox_wrap.parent("#fancybox-overlay");          
+    removeIsUser();
+    var chatHub = $.connection.chatHub;
+    // Declare a proxy to reference the hub. 
+    registerClientMethods(chatHub);
+    $.connection.hub.start().done(function () {
+        registerEvents(chatHub);
+    });
+});
+
+
+function removeIsUser() {
+    $(".isUserWrap").prev("#fancybox-overlay").removeClass("isUserOverlay");
+    $(".isUserBoxContet").parent("div").parent("#fancybox-wrap").removeClass("isUserWrap");
+    $(".parentIsUser").parent("#fancybox-content").removeClass("isUserBoxContet");
+    $(".isUser").parent("div").removeClass("parentIsUser");
+    $("#popup-chat").removeClass("isUser");
+    $("body").find("div#wrapper").removeClass("isUserIposterWrapper");
+    $("body").find("div.w1").removeClass("isUserIposterW1");
+    $("body").find("div.w2").removeClass("isUserIposterW2");
+
+
+}
+//function ConnectChathub() {
+//    //registerEvents(chatHub);
+//}
+//function setScreen(isLogin) {
+//    if (!isLogin) {
+//        $("#divChat").hide();
+//        $("#divLogin").show();
+//    }
+//    else {
+//        $("#divChat").show();
+//        $("#divLogin").hide();
+//    }
+//}
+
+function ValidateEmail(email) {
+    var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    return expr.test(email);
+};
+function registerEvents(chatHub) {
+    var UserName = "";
+    $("#connectChat").unbind("click").bind('click', function (e) {
+        $('#spnWarning').hide();
+        e.preventDefault();
+        userName = $(".hdUserName").val();
+        var email = $(".UserEmail").val();
+        var ChatDetailid = $(".ChatDetailid").val();
+        var authorId = $(".authorId").val();
+        if (userName.length > 0 && email.length > 0 && ChatDetailid.length > 0 && authorId.length > 0) // && userName != UserName
+        {
+            UserName = userName;
+            chatHub.server.connect(userName, email, ChatDetailid, authorId);
+        }
+        else {
+            if ($('#ctl00_LoginView_LoginStatus1').text() == "" || null || undefined) {
+                $('#spnWarning').text('Please enter name!');
+                $('#spnWarning').show();
+            }
+            $("#divusers").html("");
+            $("#divChatWindow").html("");
+            $("#fancybox-close").trigger("click");
+        }
+    });
+
+    $("#joinChatLogin").unbind("click").bind('click', function (e) {
+        $('#spnWarning').hide();
+        e.preventDefault();
+        userName = $(".ChatUserName").val();
+        var email = $(".ChatEmailAddress").val();
+        var ChatDetailid = $(".AuthorDetailId").val();
+        var authorId = 0;
+        if (userName.length > 0 && userName.length > 0 && email.length > 0 && ChatDetailid.length > 0 && ValidateEmail(email)) {
+            UserName = userName;
+            chatHub.server.checkEmailExistChat(userName, email, ChatDetailid, authorId);
+        }
+        else {
+            if (userName.length == 0) {
+                $('#spnWarning').text('Please enter name!');
+                $('#spnWarning').show();
+            } else if (email.length == 0) {
+                $('#spnWarning').text('Please enter email!');
+                $('#spnWarning').show();
+            } else if (email.length > 0) {
+                if (!ValidateEmail(email)) {
+                    $('#spnWarning').text('Invalid email address.');
+                    $('#spnWarning').show();
+                }
+            }
+            $("#divusers").html("");
+            $("#divChatWindow").html("");
+            $("#popup-chat").hide();
+            console.log(1);
+            $("#ctl00_LoginChatPnl").show();
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+    });
+
+    $("a[data-toggle='modal']").unbind("click").bind('click', function (e) {
+        e.preventDefault();
+        var getId = $(this).attr("data-target");
+        $(getId).toggle();
+        $(getId).removeClass("fade");
+        $("#fancybox-close").trigger("click");
+        //var close = $(".close").attr("data-dismiss");
+
+        $(".close").unbind("click").bind('click', function (ev) {
+            if ($(this).attr("data-dismiss") == "modal")
+                $(getId).toggle();
+            var authorId = $(".authorId").val();
+            var getwarnmessage = '';
+            if ($('#ctl00_LoginView_LoginStatus1').text() == "" || null || undefined) {
+                getwarnmessage = confirm("Do you really want to close chat?");
+            } else {
+                getwarnmessage = confirm("Do you want to end chat? This will remove all messages and users from the chat.");
+            }
+
+            var getautor = authorId != undefined && authorId.length > 0
+            if (getautor) {
+                if (getwarnmessage) {
+                    removeIsUser();
+                    var userId = $(".hdId").val() == '' ? 0 : $(".hdId").val();
+                    $("#divusers").html("");
+                    $("#divChatWindow").html("");
+                    chatHub.server.onDisconnected(true, userId);
+                }
+            }
+            else {
+                removeIsUser();
+                var userId = $(".hdId").val() == '' ? 0 : $(".hdId").val();
+                chatHub.server.onDisconnected(true, userId);
+            }
+            window.onbeforeunload = null;
+            ev.preventDefault();
+        });
+
+    })
+
+    function SendMessage() {
+        var message = $("#txtMessage").val().trim();
+        var userName = $(".hdUserName").val();
+        var email = $(".UserEmail").val();
+        var UserGroupId = $(".ChatDetailid").val();
+        var userId = $(".hdId").val();
+
+        var parentId = $("#ParenMessagetId").attr("msgid");
+        if (parentId == undefined) {
+            parentId = 0;
+        }
+        if (message.length > 0) {
+
+
+            chatHub.server.sendMessageToGroup(UserGroupId, userId, message, parentId);
+            setTimeout(function () {
+                $("#txtMessage").val("");
+            }, 100);
+            $("#txtMessage").val().trim();
+            console.log(1);
+            $("#ParenMessagetId").text("");
+            $("#ParenMessagetId").removeAttr("msgId");
+            $(".StopReply").hide();
+        }
+        return false;
+    }
+
+    $('.btnSendMsg').unbind("click").bind('click', function (e) {
+        SendMessage();
+        e.preventDefault();
+        return false;
+    });
+    $(".SaveChat").unbind("click").bind('click', function (e) {
+        e.preventDefault();
+        var UserGroupId = $(".ChatDetailid").val();
+        var userId = $(".hdId").val();
+        chatHub.server.authorSaveChat(UserGroupId, userId);
+    });
+
+    $(".ChatEmailAddress").keypress(function (e) {
+        if (e.which == 13) {
+            $("#joinChatLogin").click();
+        }
+    });
+
+    $('#txtMessage').unbind('keyup').bind('keyup', function (e) {
+        if (e.which == 13 && !e.shiftKey) {
+            SendMessage();
+            e.preventDefault();
+
+            setTimeout(function () {
+                $("#txtMessage").val("");
+            }, 10);
+            $("#txtMessage").val().trim();
+            return false;
+        }
+    });
+    $(".StopReply").unbind("click").bind('click', function (e) {
+        e.preventDefault();
+        $("#ParenMessagetId").text("");
+        $("#ParenMessagetId").removeAttr("msgId");
+        $(".StopReply").hide();
+    });
+
+    $(".EndChat").unbind("click").bind('click', function (e) {
+        debugger
+        var authorId = $(".authorId").val();
+        var getwarnmessage = '';
+        if ($('#hdnLogout').attr('LogoutChat') == 'true') {
+            getwarnmessage = true;
+        } else {
+            if ($('#ctl00_LoginView_LoginStatus1').text() == "" || null || undefined) {
+                getwarnmessage = confirm("Do you really want to close chat?");
+            } else {
+                getwarnmessage = confirm("Do you want to end chat? This will remove all messages and users from the chat.");
+            }
+        }
+        console.log('authorId=' + authorId + ', hdId' + $(".hdId").val());
+        var getautor = authorId != undefined && authorId.length > 0
+
+        var userId = $(".hdId").val() == '' ? 0 : $(".hdId").val();
+        if (userId == 0 || userId == undefined || userId == null) {
+            if (authorId != '') {
+                $.ajax({
+                    type: "POST",
+                    url: '/Templates/iPosters/iPosterService.asmx/GetUserDetailByAuthorId',
+                    data: JSON.stringify({ authorId: authorId }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    async: false,
+                    success: function (data) {
+                        if (data.d != 0) {
+                            $(".hdId").val(data.d);
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+        }
+        if (getautor) {
+            if (getwarnmessage) {
+                var userId = $(".hdId").val() == '' ? 0 : $(".hdId").val();
+                console.log(2);
+                $('#ctl00_LoginChatPnl').show();
+                chatHub.server.onDisconnected(true, userId);
+            }
+        }
+        else {
+            if (getwarnmessage) {
+                var userId = $(".hdId").val() == '' ? 0 : $(".hdId").val();
+                console.log(3);
+                $('#ctl00_LoginChatPnl').show();
+                chatHub.server.onDisconnected(true, userId);
+            } else {
+                $('#ctl00_LoginChatPnl').hide();
+            }
+        }
+        window.onbeforeunload = null;
+        e.preventDefault();
+        return false;
+        // window.location.reload();
+    });
+    //$("#fancybox-close").click(function () {
+    //    removeIsUser();
+    //});
+    //$("#guesttoolbar").click(function () {
+    //    removeIsUser();
+
+    //})
+}
+
+
+
+
+function registerClientMethods(chatHub) {
+
+    // Calls when user successfully logged in
+    //console.log(id, userName, allUsers, messages, message);
+    //id, userName, user.UserId, UserGroup, message.ConvMessage
+    //id, userName, user.UserId, UserGroup
+    //id, userName, user.UserId, AuthorId, UserGroup, messages
+    //var addedUserid = 0;
+    var isAuthor = false;
+    $(".StopReply").hide();
+    //id, userName, user.UserId, AuthorId, userChatGroup.UserGroupId, UserGroup, messages
+    chatHub.client.onConnected = function (id, userName, UserId, IsAuthor, UserGroupId, UserGroup, messages) {
+        $("#divusers").html("");
+        $("#divChatWindow").html("");
+        //console.log(userName + "connected")
+        //console.log(id, userName, UserId, AuthorId, UserGroupId, UserGroup, messages);
+        //setScreen(true);
+        var userid = $(".hdId").val();
+        $(".hdId").val(UserId);
+        isAuthor = IsAuthor;
+        // console.log(id, userName, UserId, IsAuthor, UserGroupId, UserGroup, messages);
+
+        if (!IsAuthor) {
+
+            //$(".isUserBoxContet").parent("div").parent("#fancybox-wrap");
+            // var fancybox_overlay = $(".isUserBoxContet").parent("#fancybox-overlay");
+
+
+            $("body").find("div#wrapper").addClass("isUserIposterWrapper");
+            $("body").find("div.w1").addClass("isUserIposterW1");
+            $("body").find("div.w2").addClass("isUserIposterW2");
+
+            $("#popup-chat").addClass("isUser");
+            $(".isUser").parent("div").addClass("parentIsUser");
+            setTimeout(function () {
+                $(".parentIsUser").parent("#fancybox-content").addClass("isUserBoxContet");
+                $(".isUserBoxContet").parent("div").parent("#fancybox-wrap").addClass("isUserWrap");
+                $(".isUserWrap").prev("#fancybox-overlay").addClass("isUserOverlay");
+            }, 500);
+
+
+            $(".SaveChat").hide();
+            $(".answer").hide();
+            $(".divusers").hide();
+
+            $("#UsersPanel").hide();
+            var email = $(".ChatEmailAddress").val();
+            if (email != undefined && email != null && email != "") {
+                $(".hdUserName").val(userName);
+                $(".UserEmail").val(email);
+            }
+            $(".ChatUserName").val("");
+            $(".ChatEmailAddress").val("");
+        }
+        else {
+
+            $("#UsersPanel").show();
+        }
+
+
+        //console.log(id, userName, UserId, AuthorId, ChatGroupId, UserGroup, messages);
+        //$('.hdId').val(id);
+
+
+
+
+
+
+        //for (i = 0; i < messages.length; i++) {
+        //    //console.log(messages[i].UserName, messages[i].ConversationId, messages[i].Message, messages[i].ParentId);
+        //    AddMessage(messages[i].UserName, messages[i].ConversationId, messages[i].ConvMessage, messages[i].ParentConversationId, messages[i].ReplyToUserName, messages[i].ReplyToMessage, IsAuthor);
+
+        //    //if (messages[i].ParentConversations != undefined && messages[i].ParentConversations != null) {
+        //    //    //   console.log(messages[i].ParentConversations);
+        //    //    for (var y = 0; y < messages[i].ParentConversations.length; y++) {
+        //    //        //console.log(messages[i].ParentConversations[y].UserName, ParentConversations[y].ConversationId, ParentConversations[y].ConvMessage, ParentConversations[y].ParentConversationId);
+        //    //        AddMessage(messages[i].ParentConversations[y].UserName, messages[i].ParentConversations[y].ConversationId, messages[i].ParentConversations[y].ConvMessage, messages[i].ParentConversations[y].ParentConversationId, messages[i].UserName, IsAuthor);
+        //    //    }
+        //    //}
+
+        //}
+
+        //else {
+        //    //console.log(addedUserid);
+        //    //if (addedUserid != UserId) {
+
+        //    //console.log(messages);
+
+        //    //$(".answer").click(function (e) {
+        //    //    e.preventDefault();
+        //    //    var conversation = $(this).parent(".message").find("span.userName");
+        //    //    var repyingto = $("#ParenMessagetId").attr("msgId");
+        //    //    var cId = $(this).attr("id");
+        //    //    //console.log(cId);
+        //    //    if (repyingto != cId) {
+
+        //    //        $("#ParenMessagetId").attr("msgId", cId);
+        //    //        var userName = conversation.attr("Username");
+
+        //    //        $("#ParenMessagetId").text("Replying to: " + userName);
+        //    //        $(".StopReply").show();
+        //    //    }
+        //    //    //else {
+        //    //    //    $("#ParenMessagetId").text("");
+        //    //    //    $("#ParenMessagetId").removeAttr("msgId");
+        //    //    //}
+
+
+
+        //    //    //e.stopPropagation();
+        //    //    //return false;
+        //    //});
+
+        //}
+        for (i = 0; i < UserGroup.length; i++) {
+            //console.log(UserGroup, messages);
+            //addedUserid = UserGroup[i].UserId;
+            //console.log(i);
+            //console.log(UserGroup[i].UserId, UserGroup[i].UserName, UserGroup[i].EmailAddress, UserGroup[i].IsAuthor);
+            AddUser(chatHub, UserGroup[i].UserId, UserGroup[i].UserName, UserGroup[i].EmailAddress, UserGroup[i].IsAuthor);
+            //console.log(user.UserName, user.EmailAddress, user.IsAuthor);
+
+        }
+        //  Add Existing Messages
+        for (i = 0; i < messages.length; i++) {
+            //console.log(messages[i].UserName, messages[i].ConversationId, messages[i].Message, messages[i].ParentId);
+            AddMessage(messages[i].ChatUser, messages[i].ConversationId, messages[i].ConvMessage, messages[i].ParentConversationId, messages[i].ReplyToUserName, messages[i].ReplyToMessage, messages[i].ChatUser.IsAuthor);
+
+            //if (messages[i].ParentConversations != undefined && messages[i].ParentConversations != null) {
+            //    //   console.log(messages[i].ParentConversations);
+            //    for (var y = 0; y < messages[i].ParentConversations.length; y++) {
+            //        //console.log(messages[i].ParentConversations[y].UserName, ParentConversations[y].ConversationId, ParentConversations[y].ConvMessage, ParentConversations[y].ParentConversationId);
+            //        AddMessage(messages[i].ParentConversations[y].UserName, messages[i].ParentConversations[y].ConversationId, messages[i].ParentConversations[y].ConvMessage, messages[i].ParentConversations[y].ParentConversationId, messages[i].UserName, IsAuthor);
+            //    }
+            //}
+
+        }
+
+        //$(".UserGroupId").val(UserGroupId);
+        //if (AuthorId != 0) {
+        //    isAuthor = true;
+        //}
+        //$('.hdUserName').val(userName);
+        //$('#spanUser').html(userName);
+        //console.log(addedUserid);
+
+        // Add All Users
+
+        if (!isAuthor) {
+            $(".answer").hide();
+        }
+
+    }
+    chatHub.client.Error = function () {
+        alert("Error from server. Please try again");
+    }
+    chatHub.client.Error = function (e) {
+        alert(e);
+    }
+    //UserName, messageid, message, parentId, userReply
+    chatHub.client.getMessages = function (user, messageid, message, parentId, userNameReply, replyMessage) {
+
+        //console.log("getMessages: " + userName, messageid, message, parentId, userNameReply, replyMessage);
+        //console.log(userName, conversationId, message, parentId, userReply, isAuthor);
+        //UserName, conversationId, ConvMessage, ParentId, UserReply, isAuthor
+        AddMessage(user, messageid, message, parentId, userNameReply, replyMessage);
+        //console.log("afterAddmessage");
+
+        //$("#ParenMessagetId").text("");
+        //$("#ParenMessagetId").removeAttr("msgId");
+        //$(".StopReply").hide();
+
+        if (!isAuthor) {
+            $(".answer").hide();
+        }
+        //$("#txtMessage").val('');
+        //$('#divMessage').append('<div><p id=' + conversationId +'>' + user + ': ' + message + '</p></div>');
+
+        //var height = $('#divMessage')[0].scrollHeight;
+        //$('#divMessage').scrollTop(height);
+    }
+    chatHub.client.addUser = function (user) {
+
+        //console.log(user.UserId, user.UserName, user.EmailAddress, user.IsAuthor);
+        AddUser(chatHub, user.UserId, user.UserName, user.EmailAddress, user.IsAuthor);
+    }
+    chatHub.client.onSaveChat = function (messages) {
+        var link = document.createElement('a');
+        link.setAttribute('download', 'ChatConversation' + Date.now().toLocaleString() + '.json');
+        link.href = makeTextFile(JSON.stringify(messages));
+        document.body.appendChild(link);
+
+
+        // wait for the link to be added to the document
+        window.requestAnimationFrame(function () {
+            var event = new MouseEvent('click');
+            link.dispatchEvent(event);
+            document.body.removeChild(link);
+        });
+    }
+    chatHub.client.checkVisitorUserExists = function (isUserNameExist, userName, email, ChatDetailid, authorId) {
+
+        if (isUserNameExist) {
+            chatHub.server.connect(userName, email, ChatDetailid, authorId);
+            $("#popup-chat").show();
+            $("#ctl00_LoginChatPnl").hide();
+            $("#fancybox-close").trigger("click");
+            $('#spnWarning').hide();
+        } else {
+            $('#spnWarning').text('Username already exists!');
+            $('#spnWarning').show();
+        }
+    }
+    chatHub.client.checkVisitorEmailExists = function (isEmailExist, userName, email, ChatDetailid, authorId) {
+        if (isEmailExist) {
+            chatHub.server.connect(userName, email, ChatDetailid, authorId);
+            $("#popup-chat").show();
+            $("#ctl00_LoginChatPnl").hide();
+            $("#fancybox-close").trigger("click");
+            $('#spnWarning').hide();
+        } else {
+            $('#spnWarning').text('Email already exists!');
+            $('#spnWarning').show();
+        }
+    }
+    chatHub.client.startChat = function (user, isAuthor) {
+        if (!isAuthor) {
+            console.log(4);
+            $("#ctl00_LoginChatPnl").show();
+            $("#ctl00_ChatClosedPnl").hide();
+        }
+    }
+    chatHub.client.startChatPoster = function (user, isAuthor, s) {
+        if (!isAuthor) {
+            var posterId = getUrlParameter('s');
+            console.log(4);
+            if (s == posterId) {
+                $("#ctl00_LoginChatPnl").show();
+                $("#ctl00_ChatClosedPnl").hide();
+            }
+        }
+    }
+    chatHub.client.endChatPoster = function (user, isAuthor, s) {
+        if (!isAuthor) {
+            var posterId = getUrlParameter('s');
+            console.log(6);
+            if (s == posterId) {
+                $("#ctl00_LoginChatPnl").hide();
+                $("#ctl00_ChatClosedPnl").show();
+            }
+        }
+    }
+    chatHub.client.endChat = function (user, disable) {
+        if (user.IsAuthor) {
+            window.location.href = window.location.href;
+            window.location = window.location.href;
+            location.reload(true);
+            window.opener.location.href = window.opener.location;
+            window.close();
+
+        }
+        else {
+            $("#" + user.UserId).remove();
+            removeUser(user.UserId);
+        }
+        if (disable && user.IsAuthor == false) {
+            removeIsUser();
+            $("#popup-chat").hide();
+            $("#ctl00_LoginChatPnl").hide();
+            $("#ctl00_ChatClosedPnl").show();
+        } if (disable && user.IsAuthor == true) {
+            removeIsUser();
+            console.log(5);
+            $("#ctl00_LoginChatPnl").show();
+            $("#ctl00_ChatClosedPnl").hide();
+        }
+        //$("#divusers").html("");
+        // $("#divChatWindow").html("");
+        return false;
+    }
+    // On New User Connected
+    chatHub.client.onNewUserConnected = function (user) {
+        AddUser(chatHub, user.UserId, user.UserName, user.EmailAddress, user.IsAuthor);
+    }
+
+
+    // On User Disconnected
+    //chatHub.client.onUserDisconnected = function (id, userName) {
+
+    //    $('#' + id).remove();
+
+    //    var ctrId = 'private_' + id;
+    //    $('#' + ctrId).remove();
+
+
+    //    var disc = $('<div class="disconnect">"' + userName + '" logged off.</div>');
+
+    //    $(disc).hide();
+    //    $('#divusers').prepend(disc);
+    //    $(disc).fadeIn(200).delay(2000).fadeOut(200);
+
+    //}
+
+    //chatHub.client.messageReceived = function (userName, message) {
+
+    //    AddMessage(userName, message);
+    //}
+
+
+    //chatHub.client.sendPrivateMessage = function (windowId, fromUserName, message) {
+
+    //    var ctrId = 'private_' + windowId;
+
+
+    //    if ($('#' + ctrId).length == 0) {
+
+    //        createPrivateChatWindow(chatHub, windowId, ctrId, fromUserName);
+
+    //    }
+
+    //    $('#' + ctrId).find('#divMessage').append('<div class="message"><span class="userName">' + fromUserName + '</span>: ' + message + '</div>');
+
+    //    // set scrollbar
+    //    var height = $('#' + ctrId).find('#divMessage')[0].scrollHeight;
+    //    $('#' + ctrId).find('#divMessage').scrollTop(height);
+
+    //}
+
+    //function retisterbutton() {
+
+    //}
+
+    //console.log(UserName, conversationId, ConvMessage, ParentId);
+
+    //$("#txtMessage").val('');
+    //$('#divMessage').append('<div><p id=' + conversationId +'>' + user + ': ' + message + '</p></div>');
+
+    //var height = $('#divMessage')[0].scrollHeight;
+    //$('#divMessage').scrollTop(height);
+    //function OpenPrivateChatWindow(chatHub, id, userName) {
+
+    //    var ctrId = 'private_' + id;
+
+    //    if ($('#' + ctrId).length > 0) return;
+
+    //    createPrivateChatWindow(chatHub, id, ctrId, userName);
+
+    //}
+
+    /*function createPrivateChatWindow(chatHub, userId, ctrId, userName) {
+    
+        var div = '<div id="' + ctrId + '" class="ui-widget-content draggable" rel="0">' +
+            '<div class="header">' +
+            '<div style="float:right;">' +
+            '<img id="imgDelete" style="cursor:pointer;" src="/Images/delete.png" />' +
+            '</div>' +
+    
+            '<span class="selText" rel="0">' + userName + '</span>' +
+            '</div>' +
+            '<div id="divMessage" class="messageArea">' +
+    
+            '</div>' +
+            '<div class="buttonBar">' +
+            '<input id="txtPrivateMessage" class="msgText" type="text" />' +
+            '<input id="btnSendMessage" class="submitButton button" type="button" value="Send" />' +
+            '</div>' +
+            '</div>';
+    
+        var $div = $(div);
+    
+        // DELETE BUTTON IMAGE
+        $div.find('#imgDelete').click(function () {
+            $('#' + ctrId).remove();
+        });
+    
+        // Send Button event
+        $div.find("#btnSendMessage").click(function () {
+    
+            $textBox = $div.find("#txtPrivateMessage");
+            var msg = $textBox.val();
+            if (msg.length > 0) {
+    
+                chatHub.server.sendPrivateMessage(userId, msg);
+                $textBox.val('');
+            }
+        });
+    
+        // Text Box event
+        $div.find("#txtPrivateMessage").keypress(function (e) {
+            if (e.which == 13) {
+                $div.find("#btnSendMessage").click();
+            }
+        });
+    
+        AddDivToContainer($div);
+    
+    }
+    */
+
+
+    ////$div.resizable({
+    ////    stop: function () {
+
+    ////    }
+    ////});
+
+}
+
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+function makeTextFile(text) {
+    var textFile = null;
+    var data = new Blob([text], { type: 'application/json' });
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+        window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+}
+var users = [];
+//UserGroup[i].UserId, UserGroup[i].UserName, UserGroup[i].EmailAddress
+
+function removeUser(UserId) {
+    var userexists = users.includes(UserId);
+    if (userexists) {
+
+        for (var i = 0; i < users.length; i++) {
+            var getUserId = users[i];
+            if (getUserId == UserId) {
+                users.splice(i, 1);
+            }
+        }
+    }
+}
+function AddUser(chatHub, UserId, UserName, EmailAddress, isAuthor) {
+
+    //var userId = $('.hdId').val();
+    //console.log(id, name);
+    var code = "";
+
+    //if (userId == id) {
+    //    var userexists = false;
+    //    $("div.loginuser").each(function (index) {
+    //        var userid = $(this).is("#"+id);
+    //        console.log(userid, id, index);
+    //        if (userid)
+    //        {
+    //            userexists = true;
+
+    //        }
+    //console.log(UserId, UserName, EmailAddress);
+    ////    })
+    //console.log(UserId, name);
+    var userexists = false;
+    userexists = users.includes(UserId)
+
+    //console.log(userexists);
+    if (!userexists) {
+        //if (userId == UserId) {
+        if (isAuthor) {
+            //code = '<div class="loginUser"  hidden="hidden" id="' + UserId + '>' + UserName + '<br /><span>' + EmailAddress + '</span></div>';
+            //console.log("adding author ");
+        }
+        else {
+
+            code = '<div class="user"  id="' + UserId + '"><a id="' + UserId + '" >' + UserName + '</a><br /><span>' + EmailAddress + '</span></div>'; //" class="user"
+            //console.log("adding user");
+
+
+
+            //$(".users").append(code);
+            // console.log(code);
+
+            //}
+            $("#divusers").append(code);
+        }
+
+        var height = $("#divusers")[0].scrollHeight;
+        $("#divusers").scrollTop(height);
+        users.push(UserId);
+    }
+
+    //} else {
+
+    //    code = $('<a id="' + UserId + '" class="user" >' + name + '<a>');
+    //    $("#divusers").append(code);
+    //$(code).dblclick(function () {
+
+    //    var id = $(this).attr('id');
+
+    //    if (userId != id)
+    //        OpenPrivateChatWindow(chatHub, id, name);
+
+    //});
+    //}
+
+
+}
+
+
+
+
+
+
+
+
+//messages[i].UserName, messages[i].ConversationId, messages[i].ConvMessage, messages[i].ParentConversationId
+var messages = [];
+
+function AddMessage(user, conversationId, message, parentId, userNameReply, replyMessage) {
+    //console.log("addmessage");
+    //console.log(isAuthor);
+    var hasMessage = messages.includes(conversationId);
+    var toggleAuthor = ""
+    if (user.IsAuthor) {
+        toggleAuthor = "isAuthor";
+
+    }
+    //console.log(userName, conversationId, message, parentId, userNameReply, replyMessage, hasMessage);
+    if (!hasMessage) {
+
+        if (parentId == 0) {
+            //if (isAuthor)
+            //{
+            var answerText = $('.answerText').html();
+            $('#divChatWindow').append('<div class="message"><span class="userName ' + toggleAuthor + '" parentid="' + parentId + '" id="' + conversationId + '" Username="' + user.UserName + '">' + user.UserName + '</span>: ' + message + '<br /><button id="' + conversationId + '" class="answer submitButton">' + answerText + '</button></div>');
+
+            $(".answer").unbind("click").bind('click', function (e) {
+
+                e.preventDefault();
+                var conversation = $(this).parent(".message").find("span.userName");
+                var repyingto = $("#ParenMessagetId").attr("msgId");
+                var cId = $(this).attr("id");
+                //console.log(cId);
+                if (repyingto != cId) {
+
+                    $("#ParenMessagetId").attr("msgId", cId);
+                    var userName = conversation.attr("Username");
+
+                    $("#ParenMessagetId").text("Replying to: " + userName);
+                    $(".StopReply").show();
+                }
+            });
+            //}
+            //else
+            //{
+
+            //        $('#divChatWindow').append('<div class="message"><span class="userName" parentid="' + parentId + '" id="' + conversationId + '" Username="' + userName + '">' + userName + '</span>: ' + message + '</div>');
+            //}
+        }
+        else {
+            // var replyToMessage = $("#" + parentId).parent(".message").html();
+
+            $('#divChatWindow').append('<div class="message"><span><b class="userName ' + toggleAuthor + '" parentid="' + parentId + '" id="' + conversationId + '" Username="' + user.UserName + '">' + user.UserName + '</b>: <span class="AuthorReply">@' + userNameReply + ": " + replyMessage + '</span> ' + message + ' </span></div>'); //': ' + $("#" + parentId).parent(".message").html() +
+
+        }
+
+        //if (isAuthor && parentId == 0) {
+
+        // }
+        //else if (isAuthor && parentId != 0) {
+        //    $('#divChatWindow').append('<br /><span><b class="userName" parentid="' + parentId + '" id="' + conversationId + '" Username="' + userName + '">' + userName + '</b>: <span class="AuthorReply">@' + UserReply + '</span> ' + message + ' </span>');
+        //}
+
+        //if (isAuthor) {
+        //    if (parentId == 0) {
+
+        //            //else {
+        //            //    $("#ParenMessagetId").text("");
+        //            //    $("#ParenMessagetId").removeAttr("msgId");
+        //            //}
+
+
+
+        //            //e.stopPropagation();
+        //            //return false;
+        //        });
+        //    }
+        //    else {
+        //        ////$("#" + parentId).parent(".message").append('<br /><span><b class="userName" parentid="' + parentId + '" id="' + conversationId + '" Username="' + UserReply + '">' + UserReply + '</b>: <span class="AuthorReply">@' + userName + '</span>' + message + ' </span>')
+        //        $('#divChatWindow').append('<br /><span><b class="userName" parentid="' + parentId + '" id="' + conversationId + '" Username="' + userName + '">' + userName + '</b>: <span class="AuthorReply">@' + UserReply + '</span> ' + message + ' </span>');
+        //    }
+
+
+
+
+        //}
+        // else {
+
+        //}
+        var height = $('#divChatWindow')[0].scrollHeight;
+        $('#divChatWindow').scrollTop(height);
+        messages.push(conversationId);
+    }
+}
+//function AddDivToContainer($div) {
+//    $('#divContainer').prepend($div);
+
+//    $div.draggable({
+
+//        handle: ".header",
+//        stop: function () {
+
+//        }
+//    });

@@ -9,3 +9,4 @@ location: "Seattle, Washington"
 ---
 
 Lightning talk presented at the Puget Sound Programming Python (PuPPy) monthly meetup. Loved giving this talk to a wonderful crowd with diverse backgrounds.
+Access the slides used in the talk ***[here](http://saisiddu.github.io/files/SaiNudurupati_PuPPy_2016_talk.pdf)***.

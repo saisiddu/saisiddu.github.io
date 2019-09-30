@@ -1,0 +1,741 @@
+﻿body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.modal-open {
+    overflow: hidden
+}
+
+#UsersPanel, .MessagagesPnl {
+    width: 10vw;
+}
+
+.modal {
+    position: fixed;
+    top: 8vw;
+    right: 0;
+    bottom: 0;
+    left: 17vw;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0
+}
+
+    .modal.fade .modal-dialog {
+        -webkit-transition: -webkit-transform .3s ease-out;
+        -o-transition: -o-transform .3s ease-out;
+        transition: transform .3s ease-out;
+        -webkit-transform: translate(0,-25%);
+        -ms-transform: translate(0,-25%);
+        -o-transform: translate(0,-25%);
+        transform: translate(0,-25%)
+    }
+
+    .modal.in .modal-dialog {
+        -webkit-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        -o-transform: translate(0,0);
+        transform: translate(0,0)
+    }
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5)
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000
+}
+
+    .modal-backdrop.fade {
+        filter: alpha(opacity=0);
+        opacity: 0
+    }
+
+    .modal-backdrop.in {
+        filter: alpha(opacity=50);
+        opacity: .5
+    }
+
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+    .modal-header .close {
+        margin-top: -2px
+    }
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143
+}
+
+.modal-body {
+    position: relative;
+    padding: 12px
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5
+}
+
+    .modal-footer .btn + .btn {
+        margin-bottom: 0;
+        margin-left: 5px
+    }
+
+    .modal-footer .btn-group .btn + .btn {
+        margin-left: -1px
+    }
+
+    .modal-footer .btn-block + .btn-block {
+        margin-left: 0
+    }
+
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll
+}
+
+
+@media (min-width:768px) {
+    .modal-dialog {
+        width: 660px;
+        margin: 0px auto
+    }
+
+    .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        box-shadow: 0 5px 15px rgba(0,0,0,.5)
+    }
+
+    .modal-sm {
+        width: 300px
+    }
+}
+
+@media (min-width:992px) {
+    .modal-lg {
+        width: 900px
+    }
+}
+
+.modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: table;
+    content: " "
+}
+
+.btn-group-vertical > .btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
+    clear: both
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.pull-right {
+    float: right !important
+}
+
+.pull-left {
+    float: left !important
+}
+
+.hide {
+    display: none !important
+}
+
+.show {
+    display: block !important
+}
+
+.invisible {
+    visibility: hidden
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0
+}
+
+.hidden {
+    display: none !important
+}
+/*#chatheader {
+    padding: 20px;
+    background-color: #2c8a8a ;
+    border-bottom: #5f9482 solid 2px;
+    color: #000;
+    font-size: 24px;
+}*/
+/*#d7e5e4*/
+.submitButton {
+    background-color: #d7e5e4;
+    border: #ffffff solid 2px;
+    padding: 12px;
+    cursor: pointer;
+    line-height: 0px;
+}
+
+.StopReply {
+    background-color: #818276;
+}
+
+.answer {
+    background-color: #338203;
+}
+
+.submitButton:hover {
+    background-color: #e1e1e1;
+}
+
+.login {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: solid 2px #5f9482;
+    color: #1e4638;
+}
+
+    .login .textBox {
+        width: 240px;
+    }
+
+
+    .login #divButton {
+        padding: 4px;
+        text-align: right;
+    }
+
+.answerText {
+    display: none;
+}
+
+.isAuthor {
+    background-color: lightgray;
+    color: forestgreen;
+}
+
+.chatRoom {
+    /*width: 100%;*/
+    margin-left: auto;
+    margin-right: auto;
+    /*border: solid 1px gray;*/
+}
+
+    .chatRoom .title {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 8px;
+        background-color: #d7e5e4;
+        border-bottom: solid 1px #5f9482;
+    }
+
+    .chatRoom .content {
+        height: 300px;
+        /*clear: both;*/
+        /*display: inline-block;*/
+        /*float: right;*/
+    }
+/*div.ChatBoxContet {
+    width: 760px !important;
+}*/
+.isUser .modal-dialog {
+    width: auto;
+}
+
+.isUser {
+    float: left;
+    max-height: 100% !important;
+    position: unset;
+    max-width: 21vw !important;
+    /*max-height: 54vw;
+    max-width: 21.3vw !important;
+    min-height: 56vw !important;*/
+}
+
+div.chatRoom {
+    margin: 0px;
+}
+
+#chatbuttons {
+    max-height: 50px;
+    display: block;
+    margin-top: 5px;
+    clear: both;
+}
+
+div.isUser #divChatWindow {
+    width: 19vw;
+    float: left;
+    border: none;
+    min-height: 42vw !important;
+}
+
+/*div.isUser div.messageBar {
+    width: 300px;
+}*/
+/*          
+            $("#popup-chat").addClass("isUser");
+            $(".isUser").parent("div").addClass("parentIsUser");
+            $(".parentIsUser").parent("#fancybox-content").addClass("isUserBoxContet");
+            $(".isUserBoxContet").parent("div").parent("#fancybox-wrap").addClass("isUserWrap");
+            $(".isUserWrap").prev("#fancybox-overlay").addClass("isUserOverlay");
+*/
+.isUserBoxContet {
+    max-width: 22vw;
+}
+
+.parentIsUser {
+    position: unset !important;
+    overflow: hidden !important;
+}
+
+#popup-chat {
+    color: #000;
+}
+
+    #popup-chat .close {
+        background-color: #666;
+        float: right;
+        display: inline-block;
+    }
+
+.isUser .chatRoom {
+    padding: 0px;
+    margin: 0px;
+}
+
+div.isUser .messageBar {
+    float: left;
+    clear: both;
+    margin: 5px 5px 15px 5px;
+    max-width: 20vw;
+}
+
+div.isUser chatRoom {
+    max-width: 22vw !important;
+}
+
+.btmbarend {
+    position: fixed;
+    bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 22%;
+}
+
+    .btmbarend #txtMessage {
+        width: 100% !important;
+    }
+
+    .btmbarend div.isUser .messageBar {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .btmbarend .isUser #parrentMsgId {
+        min-width: 100% !important;
+    }
+
+
+@media only screen and (max-width:1700px) and (min-width: 1600px) {
+    div .isUser {
+        /*min-height: 56vw !important;*/
+        /*min-height: 70vw !important;*/
+    }
+}
+
+div .isUser .text {
+    padding: 8px !important;
+}
+
+div.isUser input#txtMessage {
+    width: 15vw;
+}
+
+div.isUser .chatRoom .messageBar .textbox {
+    width: 20vw !important;
+}
+/*.isUser input.btnSendMsg {
+    float:left;
+}*/
+
+.isUserWrap {
+    max-width: 21.9vw;
+    display: inline-block !important;
+    position: unset !important;
+    background-color: #fff;
+    padding: 0px !important;
+    height: 56vw !important;
+    border-radius: 10px;
+}
+
+.isUserOverlay {
+    display: none;
+    visibility: hidden;
+}
+
+.isUserIposterWrapper {
+    display: inline-block;
+    width: 77vw !important;
+    float: right;
+}
+
+input#txtMessage {
+    resize: none;
+}
+
+div.isUser input.btnSendMsg {
+    /* float: right; */
+}
+
+.chatRoom .content .chatWindow {
+    float: right;
+    width: 397px;
+    height: 300px;
+    border: solid 1px #5f9482;
+    overflow-y: scroll;
+    margin: 4px;
+}
+
+    .chatRoom .content .chatWindow .message {
+        padding: 4px;
+    }
+
+        .chatRoom .content .chatWindow .message .userName {
+            font-weight: bold;
+        }
+/*.chatRoom .content .chatWindow .message b.userName{
+                }*/
+/*.chatRoom .content .chatWindow .message*/ span.AuthorReply {
+    background-color: #dad8de;
+    padding: 0 .5rem;
+    margin: 0 .5rem 0 0;
+    /*// color: black;*/
+}
+/*.chatRoom .content .chatWindow .message b.userName:before {
+                   content:"Authors answer: ";
+                }*/
+#parrentMsgId {
+    min-width: 195px;
+    display: inline-block;
+}
+
+.chatRoom .content .users {
+    float: left;
+    width: 200px;
+    height: 386px;
+    display: inline-block;
+    margin-right: 5px;
+    border: 1px solid;
+    overflow-y: scroll;
+}
+
+    .chatRoom .content .users .user {
+        display: block;
+        cursor: pointer;
+        padding: 4px;
+        background-color: #f9f9f9;
+        border-bottom: solid 1px #5f9482;
+    }
+
+    .chatRoom .content .users .loginUser {
+        display: block;
+        padding: 4px;
+        color: gray;
+        border-bottom: solid 1px #5f9482;
+    }
+
+    .chatRoom .content .users .user:hover {
+        background-color: #e1e1e1;
+    }
+
+.chatRoom .messageBar {
+    /*border-top: solid 1px gray;*/
+    padding: 4px;
+    padding: 4px;
+    width: 400px;
+    float: right;
+}
+
+#chatbuttons input {
+    display: inline-block;
+    text-align: center;
+}
+
+.chatRoom .messageBar .textbox {
+    width: 395px;
+    height: 50px;
+    float: right;
+    resize: none;
+}
+
+.disconnect {
+    position: absolute;
+    margin: 10px;
+    background-color: #ffcbcb;
+    padding: 4px;
+    border: solid 1px red;
+}
+
+.chatRoom {
+    min-height: 430px;
+}
+
+.draggable {
+    position: absolute;
+    border: #5f9482 solid 1px !important;
+    width: 250px;
+}
+
+    .draggable .header {
+        cursor: move;
+        background-color: #d7e5e4;
+        border-bottom: #5f9482 solid 1px;
+        color: #1e4638;
+    }
+
+    .draggable .selText {
+        color: black;
+        padding: 4px;
+    }
+
+    .draggable .messageArea {
+        width: 250px;
+        overflow-y: scroll;
+        height: 200px;
+        border-bottom: #5f9482 solid 1px;
+    }
+
+        .draggable .messageArea .message {
+            padding: 4px;
+        }
+
+    .draggable .buttonBar {
+        width: 250px;
+        padding: 4px;
+    }
+
+        .draggable .buttonBar .msgText {
+            width: 172px;
+        }
+
+        .draggable .buttonBar .button {
+            margin-left: 4px;
+            width: 55px;
+        }
+
+#ctl00_ChatView_MessagagesPnl {
+    position: relative;
+    left: 237px;
+}
+
+.isUserWrap {
+    max-width: 21vw;
+}
+
+.isUser #divChat .messageBar #txtMessage {
+    max-width: 18vw;
+    float: left;
+}
+
+.isUserWrap {
+    height: 52.6vw !important;
+}
+
+.isUser .messageBar {
+    /*position: absolute;
+    top: 43vw;*/
+    top: 0;
+    position: relative;
+}
+
+#chatbuttons {
+    margin-right: 2.2vw;
+}
+
+.isUser div#divChatWindow {
+    /*min-height: 37.5vw !important;*/
+    /* min-height: 580px !important;*/
+    min-height: 460px !important;
+    margin: 0;
+}
+
+.isUser #chatbuttons {
+    position: relative;
+    top: 0;
+}
+
+.isUser #ctl00_ChatView_MessagagesPnl {
+    left: 0.5vw;
+    font-weight: bold;
+    font-size: 0.9vw;
+}
+
+div#parrentMsgId {
+    padding-top: 0.6vw;
+}
+
+div.isUser .messageBar {
+    margin: 0;
+}
+
+.isUser .submitButton {
+    font-size: 1vw;
+}
+
+/*#divChatWindow .message .answer {
+    padding: 12px 7px 12px 7px;
+}*/
+/*Replaced by Christer*/
+#divChatWindow .message .answer {
+    border: #ffffff solid 0vw;
+    box-shadow: rgba(0,0,0,0) 0vw 0vw 0vw;
+    border-radius: 0.3vw;
+    padding: 0.8vw 0.5vw 0.8vw 0.5vw;
+    font-size: 0.9vw;
+    color: #f1f1f1;
+    margin: 0vw 0vw 0vw 0vw;
+}
+
+.isUser #parrentMsgId {
+    background-color: white;
+    padding: 4px 0px 0px 0px;
+    min-width: auto;
+    /*min-width: 20vw;*/
+}
+
+.isUser .chatRoom .messageBar .textbox {
+    height: 4vw;
+}
+
+/*.chatRoom #chatbuttons .submitButton {
+    border: #ffffff solid 0.1vw;
+    padding: calc(4px + .5vw);
+    border-radius: 0.4vw;
+    font-size: calc(10px + .5vw);
+}*/
+/*Replaced by Christer*/
+.chatRoom #chatbuttons .submitButton {
+    border: #ffffff solid 0vw;
+    box-shadow: rgba(0,0,0,0) 0vw 0vw 0vw;
+    padding: calc(0.3vw + .5vw);
+    border-radius: 0vw;
+    font-size: calc(0.5vw + .5vw);
+    color: #f1f1f1;
+    margin: 0vw 1vw 0vw 0vw;
+}
+
+.isUser .messageBar {
+    /*top: 40vw;*/
+    top: 0;
+}
+
+.isUser #chatbuttons {
+    /*top: 7.2vw;*/
+    margin-top: 30px;
+}
+
+#popup-chat.modal.isUser {
+    background-color: white;
+}
+
+    #popup-chat.modal.isUser .modal-content {
+        box-shadow: none;
+        border: none;
+    }
+
+.isUser .modal-content {
+    max-width: 21.3vw !important;
+    min-height: 56vw !important;
+}
+
+.chat-box-z-index {
+    z-index: 9999;
+}
+
+.popupwindow_container {
+    z-index: 9999;
+}
+
+.cls-visitor {
+    position: fixed;
+    z-index: 99999;
+    display: none;
+}
+
+.chatRoom .btmbarend #chatbuttons .EndChat {
+    margin: 0;
+}
+
+.isUser .chatRoom .cls-resizable {
+    resize: none;
+}
+
+.chatRoom .btmbarend {
+    bottom: 2vw;
+    padding: 0vw 0vw 0vw 0.5vw;
+}
+
+    .chatRoom .btmbarend .messageBar {
+        padding: 0vw 0vw 1vw 0vw;
+        width: 18vw;
+    }
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .btmbarend {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .chatRoom #chatbuttons .submitButton {
+        font-size: 9px;
+    }
+
+    .btmbarend #chatbuttons {
+        margin-right: 0;
+    }
+}

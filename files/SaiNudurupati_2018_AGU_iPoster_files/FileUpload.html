@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- saved from url=(0114)file:///C:/Users/saisi/Desktop/GitHub/saisiddu.github.io/files/AGU%20-%20iPosterSessions.com_files/FileUpload.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	File Upload
+</title>
+
+    <script src="./jquery-1.8.3.min.js.download" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            setTimeout(function () {
+                $("input[type='file']").attr("accept", ".mp3");
+            }, 100);       
+        });
+
+        function fileUploaded(sender, args) {
+            document.getElementById('btnDummy').click();
+        }
+
+        function updateAudioPresentation(file,title) {
+            parent.insertAudioPresentation(file,title);
+        }
+    </script>
+
+    <style>
+        /*
+        YUI 3.18.1 (build f7e7bcb)
+        Copyright 2014 Yahoo! Inc. All rights reserved.
+        Licensed under the BSD License.
+        http://yuilibrary.com/license/
+        */
+
+        html {
+            color: #000;
+            background: #FFF;
+        }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        fieldset, img {
+            border: 0;
+        }
+
+        address, caption, cite, code, dfn, em, strong, th, var {
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        caption, th {
+            text-align: left;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 100%;
+            font-weight: normal;
+        }
+
+        q:before, q:after {
+            content: '';
+        }
+
+        abbr, acronym {
+            border: 0;
+            font-variant: normal;
+        }
+
+        sup {
+            vertical-align: text-top;
+        }
+
+        sub {
+            vertical-align: text-bottom;
+        }
+
+        input, textarea, select {
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            *font-size: 100%;
+        }
+
+        legend {
+            color: #000;
+        }
+
+        #yui3-css-stamp.cssreset {
+            display: none;
+        }
+
+        body {
+            padding: 10px 0;
+            margin: 0;
+            font: 14px/18px Arial, Helvetica, sans-serif;
+        }
+
+        input.ruFakeInput {
+            width: 300px;
+        }
+    </style>
+
+<link href="./WebResource(5).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./WebResource(6).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./WebResource(7).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./WebResource(8).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"></head>
+<body>
+    <form method="post" action="https://agu2018fallmeeting-agu.ipostersessions.com/Templates/iPosters/FileUpload.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value=";;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:sv-SE:c7c66246-7597-47ee-87ae-ac254004a457:ea597d4b:b25378d2;Telerik.Web.UI, Version=2013.3.1114.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4:sv-SE:9d967110-0dc5-4d20-a086-c7556058bb3c:16e4e7cd:b7778d6c:f7645509:24ee1bba:52af31a4">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="t69hQpXP9kQ1BoUmYn3uXWWPX4LDEET2uACqx2uPq/7N0leedmKCt3EQsaYpCsBNGg4mP4JXsZnx2mXuRJpLrKTUSI65WCWGfPaVFuRmry4diAboXUeGQ2Rv/HFe3cxve3VjuLl4drchKHlNwRMvm333jozubLLFU41nd7RQB1SMI0p+pqFv9MhuhD9bJNKZ9SfI2OUAub+ZTHla8azQN38SHpE1VseqbVYcofLZVDAsOdp70VIWInXUnUDFLvozUdAsT3pRvBRTXI+5eZ7HFsKmdsoRkBxEmqxrlzHiHJYknY6fSX0ya9XThJQAFObSP8O/8YwYJa3TdJk6pftyFCaJIf5X5fBseeiL19wg5+ngxG0qJG8Cd1fAX66IHKK5XpBwL+0sJQX8K75nSMXj8CqJOzjU5X3QfHx8PAQlmCA6yNRt2B1f+NEJSTDkBWEXCS58DkDovLDtmQG1KdRH6XWpMORulzUb2bPBCww/GOxeTGfCZDNMaYenXodqAfQtYjXvuZjBjjAtZWZQt8760E5u5CxGVmJkLfQZP75fXUNm/UjKjiQBUbZnLX3eq2PZPoHg/Zd39gAx+vKsLHys6VhmBb34exoTf+y+i22mgoBUOUsDbkFNoRfOv7FTtj6SSkAjf76Jf054s/pVES/4jSwyedYz50BaO1z9oVVDd6z4ZU4aOT6lcxSjJVCtiGGFOIE7eHVFksl6iOovOG404+KIq/IrXAs24PSNyvbhjTBYzw47LsJ5ZaUHJvl5KanwWEg/ksPbnR1HCWSOwM84rTY6n+vBH3XQLbRoRHDR4qdzZ7myU3bFi+imdBTJEJNIdPh+KXC897X9OH4Z9eQI+sYivLi03mpB5mGbwxQcbwHQrNoYhyth/j+mPeud1+jkXEL1ylpQxhMgYw8sV1yBzHFgEVSO7VfjjipvC9JOKIOHjat4UtbFXFvrgfsAGJfA">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./WebResource(4).axd" type="text/javascript"></script>
+
+
+<script src="./Telerik.Web.UI.WebResource(1).axd" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="56C3ABC3">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="degPv/bRX84KIYpui4coYhNoQMvN2PO00nJkwvr1/T3JcKLC4j7HGpsNmFUyE+LzRvWw3edMxWBg7E7/L+BNiQ2jCAegE87/tOrhGpYcQ4S/oBlgMUDr52JrL8n3XyWHxeZU3TZOkmfAJI4BTtTKvg==">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('RadScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+
+        <div style="padding:10px;border:1px dotted #666;">
+            <p style="margin-bottom:3px;">
+                <label for="TextBoxTitle" id="LabelTitle">Title</label>
+            </p>
+            <p style="margin-bottom:10px;">
+                <!-- 2013.3.1114.45 --><span id="TextBoxTitle_wrapper" class="riSingle RadInput RadInput_Default" style="width:400px;"><input id="TextBoxTitle" name="TextBoxTitle" size="20" class="riTextBox riEnabled" type="text" value=""><input id="TextBoxTitle_ClientState" name="TextBoxTitle_ClientState" type="hidden" autocomplete="off" value="{&quot;enabled&quot;:true,&quot;emptyMessage&quot;:&quot;&quot;,&quot;validationText&quot;:&quot;&quot;,&quot;valueAsString&quot;:&quot;&quot;,&quot;lastSetTextBoxValue&quot;:&quot;&quot;}"></span>
+            </p>
+            
+            <p style="margin-bottom:3px;">
+                <label for="AsyncUpload1" id="Label1">Choose audio file (must be MP3 format)</label>
+            </p>
+            <p>
+                </p><div id="AsyncUpload1" class="RadAsyncUpload RadUpload RadUpload_Default">
+	<input id="AsyncUpload1_ClientState" name="AsyncUpload1_ClientState" type="hidden" autocomplete="off">
+<ul class="ruInputs" id="AsyncUpload1ListContainer"><li id="AsyncUpload1row0"><span class="ruFileWrap ruStyled"><input type="text" tabindex="-1" class="ruFakeInput radPreventDecorate" id="AsyncUpload1fakeInput0" size="22"><label for="AsyncUpload1fakeInput0" style="display:none">label</label><input type="button" tabindex="-1" value="Select" class="ruButton ruBrowse"><input type="file" tabindex="0" class="ruFileInput" name="AsyncUpload1file0" id="AsyncUpload1file0" size="23" accept=".mp3"><label for="AsyncUpload1file0" style="display:none">label</label></span><div class="ruDropZone"><span>Drop files here</span></div></li><li><span class="ruFileWrap ruStyled"></span></li></ul><ul class="ruInputs" id="AsyncUpload1ListContainer"><li id="AsyncUpload1row0"><span class="ruFileWrap ruStyled"><input type="text" tabindex="-1" class="ruFakeInput radPreventDecorate" id="AsyncUpload1fakeInput0" size="22"><label for="AsyncUpload1fakeInput0" style="display:none">label</label><input type="button" tabindex="-1" value="Select" class="ruButton ruBrowse"><input type="file" tabindex="0" class="ruFileInput" name="AsyncUpload1file0" id="AsyncUpload1file0" size="23"><label for="AsyncUpload1file0" style="display:none">label</label></span><div class="ruDropZone"><span>Drop files here</span></div></li></ul></div>
+                
+            <p></p>
+
+            <input type="submit" name="btnDummy" value="" id="btnDummy" style="display: none;">
+        </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadTextBox, {"_displayText":"","_focused":false,"_initialValueAsText":"","_postBackEventReferenceScript":"setTimeout(\"__doPostBack(\\\u0027TextBoxTitle\\\u0027,\\\u0027\\\u0027)\", 0)","_skin":"Default","_validationText":"","clientStateFieldID":"TextBoxTitle_ClientState","enabled":true,"styles":{HoveredStyle: ["width:400px;", "riTextBox riHover"],InvalidStyle: ["width:400px;", "riTextBox riError"],DisabledStyle: ["width:400px;", "riTextBox riDisabled"],FocusedStyle: ["width:400px;", "riTextBox riFocused"],EmptyMessageStyle: ["width:400px;", "riTextBox riEmpty"],ReadOnlyStyle: ["width:400px;", "riTextBox riRead"],EnabledStyle: ["width:400px;", "riTextBox riEnabled"]}}, null, null, $get("TextBoxTitle"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAsyncUpload, {"_accessKey":"","_chunkSize":1048576,"_fileFilter":"{\"values\":[]}","_flashModuleUrl":"/WebResource.axd?d=f8kLMGFcxqpMmy9n4HPml1j4usRT4pGkNK87PPRuv6sUh6q7404lB-9m_ynpSkz1hPFYwSY5I8McX_FlRaMg-HUMFK34nKFV7oTN3XJ6HloPgxkyD4KIVO0IIU6bTaM8c6FwXZzM73bsMbPk_3b-2mwfQO6gtLWomQP3-uj-AxM1\u0026t=636427144712540750","_handlerUrl":"/Telerik.Web.UI.WebResource.axd?type=rau","_pageGUID":"4a6f28e3-8a67-460c-92d5-86458f978a49","_progressHandlerUrl":"../../Telerik.RadUploadProgressHandler.ashx","_serializedConfiguration":"ATTu5i4R+ViNFYO6kst0jC11wM/1iqH+W/isjhaDjNtLx5CQtd9bJ5Isv40a0jSzwQM7n/K+e+xfpsoozBwRrUF4O1ETaDent+keIX/OLacFkAsD1kKVQaR5tzJsE4hh8kyKErvxWD7sG8o7CJexnMBmY3DOlOAcyIZGqiW1CL5n2JLZRg/nR8oq2yevMAqsME3h57DrKc81rzUyl/HMlR7maeE5LPaprPVoWCwI6euVIeGFPquCBZcluGt9fR02sAm4bn8lePasHDh747cfUGeKPKSjmcrzAbC2tvys9JEsOAiy45S6wT1W0n8psu+OeLWZ3lPXP/zV/sjHkoo73bkIZdkJA5TKzLuw3IOW/XKfPLBfJHK9X6w+MLLPTCij4+0ParuPn8LnXukQyUjcAjKdlPnCcMS5MyqMBYgNw3E6Ah3zj/YYccVaKvc3lkli39WnRSxhVV4adr01AumlwMS5Pibc/wMkXcdP0LqCoUpZuUKVqfOyXU0bHIemELOGFKDdqCo6OIwHwutQtBDVEv3Qux/KBYlOTzdHbOQ38adVI2giyuCJrZYwYEUMJiO5fq8uwBPCr/9B7kdlzUnuq/XuLRCGt5W7jWCl7cZwFAYK4Ydoun2PrXCb4yP75WKqdXcumpBHLCrSXddYjjTpmYFBDNe2z5pXClfnUXMEAeMtst9u2CKryE+5uPvwOj62Ysk8YxGY/6fMLlNRYPaUrpU4363gbIfnJaV2fVJOm0JBoG+2WEotlW3CDwaHgXWNA8NDER5803hbU64chhgPs1dffQb0bSaSW6L89/6qTQ2MpurGvy3V1Yv2MKKOuXV0L3sbGbaWIoansS2D3T/EuZRKR7yIM/6rwEWCvnT1mNbb2brPkgPTVziBo78YBrIuvvKiqS8m6QckAV9Re6BfWnTewuoZoNpdvJr28s42Ih6+kz2Y7zWmkV2wi0NsrJn7TjsIKx72ELl/Plh2IFS1pn0jXTqnK4ZfgBVvXAvPMWtncS5XAj/FVWsslFoPAhiL+RNcOJtXr0AG8CiEG2ItUwF5DHi27bBT0/06ushCM5dLuAGUaPe7gkZps5tIlrOU5cqphWCZDLyLhoCNeT/YeoOwni4CmcJyQngek0iHUhdbiR7APk3G4K81XwztAoIWFW5Ox03OIob7PGEV9uQb8kRx1J4LlrHCZjV1zaoQnJXAa2o2buh5NTRcQbaNbsLtIjY6suRATcAj6pYnTux/yoNYJOFHA5UZbt9ZQtwu1e/DycT+YZGx9pTo1C1zIdJZudUeP+LPxTH6FNjZdXEqZ23/22frn3yMkQ5HbBHFbmaO3ejTvRjsaveuX9AN8vumb/mO/ZFstUZGaipYQNmj9g==","_serializedConfigurationType":"6R/cGaqQeHVAzdJ9wTFOyCsrMSTtqcjLe8AHwiPckPDUwecnJyNlkDYwDQpxGYQ9hs6YxhupK310sbCbtXB4H6Dz5rGNL40nkkyo4j2clmRr08jtFsPQ0RpE5BGsulPT3l0MxyAvPFMs8bMybUyAP+9RB9LoHE3Xo8BqDadX3HQdDo1Qe9/fwu2XVORVmRmVEl9solJb0YLzzThguWnDNcx/qg8NJTGhYpNlylnF05yvAKgEODg3WvX8S1SRUx4dT75urg+krsk3RWZ3nH0KpbAY8ppjz7jM97GIMLMNw7QMycsTwVGfbypvcd4pGqNa6MZuKwI0TahBUtdqBLbL6dyUBQkhwEFZ2hb7BfmVKO8=","_silverlightModuleUrl":"/WebResource.axd?d=rOhlLWbeN2T1a2pTojNjqFLQJdhRkJ6SUf_8JlmrTl5maBmfQwfXLBJ_VfosDMa_OoZnZpiep4f4gsu88NMOqUM_Mc48se6uekfGcARgybgyNmXwTT1iL_mup5jJS-8AE3dt2lf__jA0IxCOwLGu8qtb6icPFFvbdviJZ2CJGecOTcYwU5JoQQFXG-E6R5MX0\u0026t=636427144712540750","_skin":"Default","_tabIndex":0,"allowedFileExtensions":"[]","clientStateFieldID":"AsyncUpload1_ClientState","dropZones":"[]","enabled":true,"localization":{"Select":"Select","Remove":"Remove","Cancel":"Cancel","DropZone":"Drop files here"}}, {"fileUploaded":fileUploaded}, null, $get("AsyncUpload1"));
+});
+//]]>
+</script>
+</form>
+
+
+</body></html>

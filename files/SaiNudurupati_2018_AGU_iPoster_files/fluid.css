@@ -1,0 +1,1232 @@
+﻿/*all.css*/
+
+body {
+    font: 0.8vw/1.1vw Arial, Helvetica, sans-serif;
+    min-width: 53.33vw;
+    min-height: 56.25vw;
+}
+    /* ***** SAME MULTIPLIER AS popupboxtextmultiplier IN template.anonymous.js *****  */
+/*body #popuptextbox {
+    font-size: calc(0.63vw * 2);
+    line-height: calc(0.88vw * 2);
+    color: #000;
+}*/
+/*Christer changed font-size open textbox*/
+    body #popuptextbox { /* ***** SAME MULTIPLIER AS popupboxtextmultiplier IN template.anonymous.js *****  */
+        font-size: calc(100% * 1.5) !important;
+        line-height: calc(100% * 1.6);
+        color: #000;
+    }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body #popuptextbox { /* ***** SAME MULTIPLIER AS popupboxtextmultiplier IN template.anonymous.js *****  */
+        font-size: calc(1em * 1.5) !important;
+        line-height: calc(1em * 1.6);
+    }
+}
+
+#wrapper {
+    min-height: 56.25vw;
+}
+
+.w1 {
+    min-width: 53.33vw;
+    max-width: 1920px; /*must be in pixels*/
+    min-height: 56.25vw;
+}
+
+.page1 .w2 {
+    min-height: 56.25vw;
+}
+
+#header {
+    padding: 1.72vw 0 0;
+}
+/*Christer changed padding to same as header*/
+.page #header {
+    padding: 1.72vw 0 0;
+}
+
+.logo {
+    width: 6.77vw;
+    height: 8.33vw;
+    margin: 0.26vw 0 0 0;
+}
+
+.slideshow {
+    height: 6.77vw;
+    width: 6.56vw;
+    padding: 0.42vw 0 0 0.00vw;
+}
+
+    .slideshow .slide img {
+        width: 6.35vw;
+    }
+
+    .slideshow img {
+        margin: 0 0.10vw 0 0.68vw;
+    }
+
+    .slideshow .textholder strong {
+        font: 0.94vw/1.09vw Verdana, Geneva, Arial, Helvetica, sans-serif;
+        padding: 4.37vw 0 0.05vw;
+        letter-spacing: -0.05vw;
+    }
+
+#header .holder {
+    height: 8.35vw;
+}
+
+    #header .holder h2 {
+        font-size: 1.87vw;
+        line-height: 2.08vw;
+        margin: 0 0 0.21vw;
+        min-height: 2.08vw;
+    }
+
+.page #header .holder h2 {
+    /*text-shadow: -0.05vw 0.10vw 0.05vw rgba(0, 0, 0, 0.9);*/
+    margin: 0 0 0.10vw;
+}
+
+#header .holder h3 {
+    font-size: 1.35vw;
+    line-height: 1.61vw;
+    margin: 0 0 0.21vw;
+    min-height: 1.61vw;
+}
+
+.page #header .holder h3 {
+    /*text-shadow: -0.05vw 0.10vw 0.05vw rgba(0, 0, 0, 0.9);*/
+}
+
+#header .holder h4 {
+    font-size: 1.09vw;
+    line-height: 1.25vw;
+    margin: 0 0 0.21vw;
+    min-height: 1.25vw;
+}
+
+.page #header .holder h4 {
+    /*text-shadow: -0.05vw 0.10vw 0.05vw rgba(0, 0, 0, 0.9);*/
+}
+
+.page1 #main {
+    padding: 0 0 3.12vw;
+}
+
+.page1 .column1 {
+    padding: 0.16vw 0 0;
+}
+
+.page1 .column.c.r {
+    margin-top: 0.05vw !important;
+}
+
+.column .block {
+    padding: 0.26vw 1.56vw;
+    margin: 0 0 3.12vw;
+    height: 17.19vw;
+}
+
+/*body:not(.page,.page1) #popuptextbox {
+    padding: 0.26vw 1.56vw;
+    margin: 0 0 3.12vw;
+    height: 17.19vw;
+}*/
+
+    .column .block.block2 {
+        height: 20.31vw;
+    }
+
+    .column .block.block3 {
+        height: 14.58vw;
+    }
+
+    .column .block.block4 {
+        height: 23.02vw;
+    }
+
+    .column .block.bg1 {
+        height: 41.67vw;
+    }
+
+.page .column .block, .page #popuptextbox {
+    border-radius: 0.78vw 0.78vw 0.42vw 0.42vw;
+    padding: 0.52vw 0;
+}
+
+.page .column .block {
+    margin: 0 0 1.61vw;
+    height: 17.66vw;
+}
+
+.helper.active {
+    margin-bottom: 1.61vw !important;
+}
+
+.page .column .block.block2 {
+    height: 19.27vw;
+}
+
+.page .column .block.bg1 {
+    height: 39.58vw;
+}
+
+.page1 .column .block {
+    height: 18.23vw;
+    padding: 0 0 0.52vw;
+    border-radius: 0 0 0.52vw 0.52vw;
+}
+
+.page1 .column.long .block.bg1 {
+    height: 21.15vw;
+}
+
+.page1 .column .block.block1 {
+    line-height: 1.25vw;
+    padding: 1.72vw 0 0;
+    height: 10.83vw;
+}
+
+.page1 .column .block.bg2 {
+    margin: 0 0 -520.78vw;
+    padding: 0 0 520.78vw;
+}
+
+    .page1 .column .block.bg2 .inner {
+        font-size: 0.94vw;
+        line-height: 1.25vw;
+        padding: 0.26vw 0;
+    }
+
+        .page1 .column .block.bg2 .inner p {
+            margin: 0 0 1.30vw;
+        }
+
+        .page1 .column .block.bg2 .inner .alignright {
+            margin: -0.26vw 0.52vw 0 1.04vw;
+        }
+
+.column .block h2 {
+    font-size: 1.46vw;
+    line-height: 1.72vw;
+    padding: 1.30vw 0 1.20vw;
+    min-height: 1.72vw;
+}
+
+#popuptextbox h2 {
+    font-size: calc(1.46vw * 2);
+    line-height: calc(1.72vw * 2);
+    padding: 1.30vw 3.5vw 1.20vw;
+    min-height: calc(1.72vw * 2);
+}
+
+.page #popuptextbox h2, .page1 #popuptextbox h2 {
+    font-size: calc(1.46vw * 2);
+    line-height: calc(1.72vw * 2);
+    padding: 1.30vw 0 1.20vw;
+    min-height: calc(1.72vw * 2);
+}
+
+.page #popuptextbox h2 { /* ***** SAME MULTIPLIER AS popupboxtextmultiplier IN template.anonymous.js *****  */
+    margin: -0.52vw 0 0.94vw;
+    padding: 0.78vw 8% 0.47vw;
+    border-radius: 0.78vw 0.78vw 0 0;
+    font: calc(1.41vw * 2);
+    line-height: calc(1.72vw * 2);
+    min-height: calc(1.72vw * 2);
+}
+
+.page .column .block h2 {
+    margin: -0.52vw 0 0.94vw;
+    padding: 0.78vw 8% 0.47vw;
+    border-radius: 0.78vw 0.78vw 0 0;
+    font: 1.41vw;
+    line-height: 1.72vw;
+    min-height: 1.72vw;
+}
+
+.page1 .column .block h2, .page1 #popuptextbox h2 {
+    margin: 0 0 1.30vw;
+    padding: 0.73vw 9%;
+}
+
+.page1 .column.long .block h2 {
+    padding: 0.73vw 4%;
+    margin: 0 0 1.30vw;
+}
+
+.page1 .column.long .column.c .block h2 {
+    padding: 0.73vw 10%;
+}
+
+.column .block h3, #popuptextbox h3 {
+    font-size: 1.82vw;
+    line-height: 1.98vw;
+    margin: 0 0 1.46vw;
+    padding: 1.15vw 0 0;
+}
+
+.column .block p, #popuptextbox p {
+    margin: 0 0.21vw 0.42vw 0 !important;
+}
+
+.column .block img, #cv img, #abstract img, #popuptextbox img {
+    margin: 0 0 0vw;
+}
+
+#popuptextbox img {
+    max-width: 100%;
+    height:auto !important;
+}
+
+.page .column .block img {
+    margin: 0.62vw 0 0.31vw;
+}
+
+.page .column .block .video-block, .page #popuptextbox .video-block {
+    margin: 0 -9% 0.94vw;
+}
+
+.column .block .more {
+    margin: 0 0 0.52vw;
+    padding: 0.52vw 0 0;
+}
+
+.column.c .block .more {
+    padding: 0.52vw 0;
+}
+
+.column .block .more span {
+    padding: 0 0 1.56vw;
+    font-size: 0.94vw;
+    line-height: 1.09vw;
+    min-width: 6.41vw;
+}
+
+.page .column .block .more span {
+    padding: 0 0 1.15vw;
+    min-width: 4.32vw;
+    font-size: 0.83vw;
+}
+
+.page1 .column .block .more span {
+    padding: 0 0 1.15vw;
+    min-width: 4.32vw;
+    font-size: 0.83vw;
+      background-position: center bottom;
+      background-size: contain;
+}
+
+.page1 .visual.first {
+    margin: -1.30vw -11% 0.89vw;
+}
+
+.page1 .column.long .visual1 {
+    height: 18.75vw;
+}
+
+    .page1 .column.long .visual1:after {
+        width: 0.05vw;
+        margin: 0 0 0 -0.26vw;
+    }
+
+.page1 .column.long .r .visual.first {
+    margin: 0 -11% 0.73vw;
+}
+
+.page1 .column.long .bg3 {
+    padding: 0 0 520.78vw;
+    margin: 0 0 -520.78vw;
+}
+
+.popup-holder {
+    left: -520.83vw;
+}
+
+.container {
+    max-width: 102.92vw;
+}
+
+.column .section {
+    padding: 2.08vw 0 0 2.2%;
+}
+
+    .column .section .alignleft {
+        margin: -0.68vw 2.08vw 0 -0.21vw;
+    }
+
+    .column .section .textholder {
+        height: 9.90vw;
+    }
+
+    .column .section h2 {
+        font-size: 1.61vw;
+        line-height: 1.82vw;
+        margin: 0 0 0.05vw;
+        min-height: 1.82vw;
+    }
+
+    .column .section h3 {
+        font-size: 1.35vw;
+        line-height: 1.56vw;
+        margin: 0 0 0.05vw;
+        min-height: 1.56vw;
+    }
+
+    .column .section h4 {
+        font-size: 1.04vw;
+        line-height: 1.41vw;
+        margin: 0 0 0.52vw;
+        min-height: 1.41vw;
+    }
+
+.column .photo {
+    padding: 0.52vw 5% 0;
+}
+
+    .column .photo .alignright {
+        margin: 2.92vw -5% 0 0;
+    }
+
+    .column .photo .textholder strong {
+        font-size: 0.94vw;
+        line-height: 1.09vw;
+    }
+
+div.lightbox {
+    width: 47.92vw;
+    border-radius: 0.52vw;
+    height: 35vw;
+    overflow:hidden;
+}
+
+    div.lightbox h2 {
+        font-size: 1.56vw;
+        line-height: 1.72vw;
+        padding: 0.73vw 1.46vw 0.52vw;
+    }
+
+    div.lightbox .topiclist {
+        margin: 0 0 -0.47vw;
+        padding: 1.04vw 1.56vw 0;
+    }
+
+        div.lightbox .topiclist li {
+            padding: 0 0 1.56vw;
+        }
+
+        div.lightbox .topiclist .visual {
+            margin: 0 0 0.42vw;
+        }
+
+        div.lightbox .topiclist .alignleft {
+            margin: 0 0.57vw 0 0;
+        }
+
+        div.lightbox .topiclist .textholder {
+            font-size: 1.04vw;
+            line-height: 1.25vw;
+        }
+
+    div.lightbox .textholder strong {
+        font-size: 1.56vw;
+        line-height: 1.25vw;
+    }
+
+
+
+
+.fontSize12 {
+    font-size: 0.62vw !important;
+    line-height: 0.78vw !important;
+}
+
+.fontSize16 {
+    font-size: 0.83vw !important;
+    line-height: 1.15vw !important;
+}
+
+.fontSize18 {
+    font-size: 0.94vw !important;
+    line-height: 1.25vw !important;
+}
+
+.fontSize20 {
+    font-size: 1.04vw !important;
+    line-height: 1.35vw !important;
+}
+
+.fontSize22 {
+    font-size: 1.15vw !important;
+    line-height: 1.46vw !important;
+}
+
+.small {
+    font-size: 0.47vw;
+    line-height: 0.57vw;
+}
+
+.page1 .column .block.mblock-template3 {
+    height: 18.02vw;
+}
+
+
+.template1 #header .holder h2 {
+    font-size: 2.3vw;
+    line-height: 2.5vw;
+    min-height: 2.5vw;
+}
+
+.template1 #header .holder h3 {
+    font-size: 1.6vw;
+    line-height: 1.5vw;
+    min-height: 1.5vw;
+}
+
+.template1 #header .holder h4 {
+    font-size: 1.3vw;
+    line-height: 1.3vw;
+    min-height: 1.3vw;
+}
+
+/*template.css*/
+
+.no-wrap {
+    margin: 0 0.26vw;
+}
+
+
+#edit-background {
+    -webkit-box-shadow: 0.00vw 0.05vw 0.05vw 0.00vw rgba(255,255,255, .2), inset 0.00vw 0.05vw 0.05vw 0.00vw rgb(0,0,0);
+    -moz-box-shadow: 0.00vw 0.05vw 0.05vw 0.00vw rgba(255,255,255, .2), inset 0.00vw 0.05vw 0.05vw 0.00vw rgb(0,0,0);
+    box-shadow: 0.00vw 0.05vw 0.05vw 0.00vw rgba(255,255,255, .2), inset 0.00vw 0.05vw 0.05vw 0.00vw rgb(0,0,0);
+}
+
+.logo .redactor_toolbar {
+    top: 0.52vw;
+    left: 2.86vw;
+    width: 6.35vw;
+}
+
+#background-image-wrapper, #background-image {
+    height: 7.81vw;
+    width: 7.81vw;
+}
+
+    #background-image img {
+        max-height: 7.81vw;
+    }
+
+    #background-image-wrapper p {
+        top: 3.39vw;
+        left: 1.56vw;
+        text-shadow: 0.05vw 0.05vw 0.05vw #000;
+    }
+
+#popup-help {
+    width: 44.79vw !important;
+}
+
+#help {
+    height: 41.67vw;
+    width: 44.79vw;
+}
+
+    #help > div {
+        width: 44.79vw;
+    }
+
+#color-edit {
+    height: 41.67vw;
+    width: 42.71vw;
+}
+
+    #color-edit > div {
+        width: 40.62vw;
+    }
+
+.lightbox.colors {
+    width: 42.71vw !important;
+}
+
+div.lightbox > div > div > div {
+    margin: 0.52vw 0 1.56vw;
+    padding: 1.04vw 1.56vw 0;
+}
+
+    div.lightbox > div > div > div p {
+        margin-top: 0.62vw;
+    }
+
+
+
+#cv-show-wrapper, #abstract-show-wrapper, #help .block {
+    width: calc(100% - 1.6vw)
+}
+
+#poppers #fancybox-wrap, #poppers #fancybox-content {
+    width:47.92vw !important;
+}
+
+#popexternal #fancybox-wrap, #popexternal #fancybox-content {
+    width: 90vw !important;
+}
+
+#fancybox-content .scrollable-area-wrapper {
+}
+
+#disclosure > div, #cv > div, #abstract > div, #help > div {
+    height: 31.25vw;
+}
+
+#edit-#disclosure-wrapper, #edit-cv-wrapper, #edit-abstract-wrapper {
+    height: 28.65vw;
+}
+
+#externallink-modal {
+    height: 100% !important;
+}
+
+#popup-externallink {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#externallink-modal > iframe, #externallink-modal > webview {
+    height: calc(100% - 5vw);
+    width: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#externallink-title {
+    font-size:50%;
+    font-weight:normal;
+}
+
+.text ul, #disclosure ul, #cv ul, #abstract ul {
+    margin-bottom: 0.52vw;
+}
+
+/* ***** SAME MULTIPLIER AS popupboxtextmultiplier IN template.anonymous.js *****  */
+
+#popuptextbox ul {
+    margin-bottom: calc(0.52vw * 2);
+}
+
+#popuptextbox li {
+    margin-left: calc(1.04vw * 2);
+    margin-bottom: calc(0.10vw * 2);
+}
+
+.save-alert {
+    right: 0.36vw;
+    bottom: 0.16vw;
+    padding: 0.26vw 0.52vw;
+    -webkit-border-radius: 0.52vw;
+    -moz-border-radius: 0.52vw;
+    border-radius: 0.52vw;
+    -webkit-box-shadow: 0.00vw 0.05vw 0.05vw 0.00vw rgba(255,255,255, .2), inset 0.00vw 0.05vw 0.05vw 0.00vw rgb(0,0,0);
+    -moz-box-shadow: 0.00vw 0.05vw 0.05vw 0.00vw rgba(255,255,255, .2), inset 0.00vw 0.05vw 0.05vw 0.00vw rgb(0,0,0);
+    box-shadow: 0.00vw 0.05vw 0.05vw 0.00vw rgba(255,255,255, .2), inset 0.00vw 0.05vw 0.05vw 0.00vw rgb(0,0,0);
+}
+
+.page1 .save-alert {
+    top: 0.16vw;
+}
+
+.text {
+    min-height: 5.21vw !important;
+}
+
+body:not(.page) .redactor-open .column .block.edited, body:not(.page1) .redactor-open .column .block.edited {
+    padding: 0.52vw 1.56vw;
+}
+
+.page1 .logo {
+    margin: 0.26vw 1.04vw 0 0;
+}
+
+.dd {
+    padding-top: 3.91vw;
+}
+
+.slideshow-placeholder {
+    height: 6.77vw;
+    width: 6.56vw;
+    padding: 0.42vw 0 0 0.00vw;
+}
+
+.slideshow.edit:hover {
+    top: 1.61vw;
+    right: 2.24vw;
+    padding: 0.52vw;
+}
+
+.page1 .slideshow.edit:hover {
+    bottom: 4.17vw;
+    right: 0.00vw;
+}
+
+.slideshow.edit:hover .slide img {
+    border: 0.21vw solid #f7f7f7;
+}
+
+
+
+.logo-placeholder {
+    width: 6.77vw;
+    height: 8.33vw;
+    margin: 0.26vw 0 0 0;
+}
+
+.page1 .logo-placeholder {
+    margin: 0.26vw 1.04vw 0 0;
+}
+
+.logo-wrapper.edit:hover {
+    top: 1.61vw;
+    left: 2.24vw;
+    padding: 0.52vw;
+}
+
+.page1 .logo-wrapper.edit:hover {
+    bottom: 4.43vw;
+    left: 1.04vw;
+}
+
+.logo-wrapper.edit:hover .logo img {
+    border: 0.21vw solid #f7f7f7;
+}
+
+.logo-wrapper .logo img {
+    max-width: 6.35vw;
+    max-height: 7.81vw;
+}
+
+
+
+
+#reset-all-styles {
+    margin-top: 0.78vw;
+    margin-left: 1.56vw;
+}
+
+.fieldtype-select div {
+    padding-bottom: 1.04vw;
+}
+
+#image-upload-placeholder {
+    width: 48.96vw;
+    height: 18.96vw;
+}
+
+#box2.edit:hover img {
+    margin: 0.21vw;
+    width: 11.46vw;
+    height: 4.43vw;
+}
+
+#box2.edit .slide-image-toolbar {
+    left: -520.83vw;
+}
+
+    #box2.edit .slide-image-toolbar div {
+        padding: 0.10vw 0.21vw;
+        margin: 0.00vw 0.10vw 0 0;
+    }
+
+#box2.fullscreen img {
+    max-width: calc(90% - 0.05vw);
+    max-height: calc(90% - 0.05vw);
+}
+
+#slider-toolbar {
+    width: 10.42vw;
+    height: 3.12vw;
+    bottom: 2.60vw;
+    margin-left: -5.21vw;
+}
+
+    #slider-toolbar a {
+        height: 2.86vw;
+        width: 2.86vw;
+        text-indent: -260.42vw;
+    }
+
+#slider-message {
+    top: 2.60vw;
+    right: 2.60vw;
+    font-size: 1.56vw;
+    padding: 1.04vw;
+    border: 0.10vw solid white;
+}
+
+.empty {
+    min-height: 26.04vw;
+}
+
+iframe {
+    padding: 0.78vw 0;
+}
+
+table td, table th {
+    border: 0.05vw solid rgb(55,93,129) !important;
+    padding: 0.26vw !important;
+}
+
+.padding5 {
+    padding: 0.26vw;
+}
+
+.w300 {
+    width: 15.62vw;
+}
+
+.locked {
+    margin-top: 4.17vw;
+    font-size: 0.73vw;
+}
+
+#header .holder {
+    padding: 0 0.52vw;
+}
+
+.re-file:before {
+    font: normal normal normal 0.73vw/1 FontAwesome;
+}
+
+html.qr .slideshow {
+    padding: 0.3vw 0 0 0;
+}
+
+/* Audioplayer styles */
+.redactor_editor div.playaudio, .block .playaudio {
+    height: 2vw;
+    border-radius: 0.5vw;
+}
+.audioplayerwrapper {
+    padding: 0px !important;
+    margin-top: -0.1vw;
+    margin-bottom: -0.5vw;
+    height: 1.9vw !important;
+    vertical-align:-0.7vw;
+}
+.audiocontainer {
+    padding: 0.1vw !important;
+    margin-top: -0.1vw;
+    margin-bottom: -0vw;
+    height: 1.4vw !important;
+}
+.audiojs {
+    width: 28vw;
+    height: 1.9vw;
+    font-size: 0.8vw;
+    box-shadow: none;
+}
+.audiojs .scrubber {
+    width: 17vw!important;
+    height: 0.7vw!important;
+    margin: 0.65vw!important;
+}
+.audiojs .time {
+    height: 1.8vw!important;
+    line-height: 1.9vw!important;
+    margin: 0vw 0vw 0vw 0.5vw!important;
+    padding: 0vw 0.5vw 0px 0.5vw!important;
+}
+.audiojs .play {
+    background: url("/templates/iPosters/scripts/audiojs/player_play.gif") no-repeat;
+    background-size:contain;
+}
+.audiojs .pause {
+    background: url("/templates/iPosters/scripts/audiojs/player_pause.gif") no-repeat;
+    background-size: contain;
+}
+.audiojs .play-pause {
+    background-size: cover;
+    width: 1.7vw;
+    height: 1.7vw;
+    padding: 0.2vw 0vw 0vw 0vw;
+}
+.audiojs p {
+    width: 1.6vw;
+    height: 1.6vw;
+}
+.closeaudio {
+    width: 1.6vw;
+    height: 1.6vw;
+    padding: 0px;
+    margin-bottom: -1vw;
+    margin-top: 0.3vw;
+}
+/* End Audioplayer styles */
+
+.seattle #main h2 {
+    font-size: 0.94vw;
+}
+
+.seattle #header .holder h2 {
+    font-size: 1.46vw;
+    line-height: 1.87vw;
+    min-height: 1.87vw;
+    text-shadow: -0.05vw 0.10vw 0.05vw rgba(0, 0, 0, 0.7);
+}
+.chartjs canvas {
+    max-width: 16vw !important;
+}
+
+.chartjs {
+    padding:0.5vw;
+    background-color: white;
+    max-width: 17vw;
+}
+
+.seattle #header .holder h3 {
+    font-size: 0.99vw;
+    line-height: 1.30vw;
+    min-height: 1.30vw;
+}
+
+.seattle #header .holder h4 {
+    font-size: 0.83vw;
+    line-height: 1.09vw;
+    min-height: 1.09vw;
+}
+
+.ecdc .slideshow img {
+        -webkit-box-shadow: 0 0vw 0vw rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0vw 0vw rgba(0, 0, 0, 0.7);
+    }
+
+.tfidemo .template1 #header .holder h2 {
+    font-size: 2.5vw;
+    line-height: 3vw;
+}
+
+.tfidemo #header .holder h2 {
+    font-size: 2.5vw;
+    line-height: 3vw;
+}
+
+.assh div#popup-notice h1 {
+    font-size: 4vw;
+    line-height: 4vw;
+    padding: 3vw 0vw 0vw;
+    color:#ffffff;
+}
+
+.assh div#popup-notice h2 {
+    font-size: 2.7vw;
+    line-height: 1vw;
+    padding: 3vw 0vw 0vw;
+    color:#ffffff !important;
+}
+
+.assh div#popup-notice {
+    background-color: #f15500;
+}
+
+.assh #notice {
+    padding-top: 2vw;
+}
+
+.assh #noticeClose {
+    background-image: linear-gradient(to bottom, #00a7d4 0%, #00a7d4 100%);
+}
+
+.assh .btn-default {
+    border-color: #848484;
+}
+
+.assh .audiojs {
+    width: 25vw;
+}
+
+/*.assh  #fancybox-close{
+	display: none !important;
+}
+
+.assh div#references-show {
+   height: 27vw !important;
+}
+
+.assh div#disclosure-show {
+   height: 27vw !important;
+}*/
+
+.nzsss div#disclosure-show, .uwyo div#disclosure-show, .termis div#disclosure-show, .ibtm div#disclosure-show, .paraguay-tephinet div#disclosure-show, .kinbre2017 div#disclosure-show, .emaac2017 div#disclosure-show, .ecco div#disclosure-show, .ibd div#disclosure-show {
+   height: 27vw !important;
+}
+
+.nzsss div#references-show, .uwyo div#references-show, .termis div#references-show, .ibtm div#references-show, .paraguay-tephinet div#references-show, .kinbre2017 div#references-show, .emaac2017 div#references-show, .ecco div#references-show, .ibd div#references-show {
+   height: 27vw !important;
+}
+
+.emaac2017 .template1 #header .holder h2 {
+    color: #FFFFFF !IMPORTANT;
+}
+
+.emaac2017 .template1 #header .holder h3 {
+    color: #FFC72A !IMPORTANT;
+}
+
+.emaac2017 .template1 #header .holder h4 {
+    color: #FFC72A !IMPORTANT;
+}
+
+.emaac2017 .column .block h2 {
+    background-color: #FFFFFF !important;
+}
+
+.natcon17 .logo-wrapper .logo img {
+    max-width: 11vw;
+    max-height: 5vw;
+}
+
+/*.natcon17 div#popuptextbox {
+    color: #ffffff !important;
+}*/
+
+
+/*Christer transfered css fixes from Template Design*/
+/*Buttons at bottom of poster in every width*/
+#guesttoolbar {
+    position: absolute !important;
+    top: 52.5vw !important;
+}
+
+/*margins for lists*/
+.text li, #disclosure li, #cv li, #abstract li {
+    margin-left: 1.04vw !important;
+    margin-bottom: 0.10vw !important;
+}
+
+/*padding cv text*/
+#cv .text {
+    padding-right: 0.5vw;
+}
+
+.back-button {
+    position: absolute !important;
+    top: 52.3vw !important;
+    visibility: hidden;
+    bottom: 1.4vw;
+    left: 0.9vw;
+    background-image: url();
+}
+
+/*new back button*/
+i.fa-chevron-left {
+    background: #666;
+    border-radius: 100%;
+    border: 0.2vw solid #fff;
+    box-shadow: rgba(0,0,0,0.3) 0.2vw 0.2vw 0.7vw;
+    color: #ddd;
+    display: table-cell;
+    font-size: 2vw;
+    height: 2vw;
+    padding: 0.5vw;
+    width: 2vw;
+}
+
+#poster-id {
+    display: none;
+}
+
+#disclosure-show, #references-show, #cv-show, #abstract-show {
+    height: 27vw !important;
+}
+
+a:-webkit-any-link {
+    word-wrap: break-word;
+}
+
+.column .block .more span {
+    background-size: contain !important;
+}
+
+div#NotPaidMessage {
+    display: none;
+}
+
+.page .column .block {
+    border-radius: 0;
+    padding: 0.5vw 0 1.1vw;
+}
+
+    .page .column .block h2 {
+        border-radius: 0;
+    }
+
+.emailbody {
+    min-height: 10vw;
+    width: 44vw;
+}
+
+.emailsender {
+    width: 44vw;
+}
+
+.emailname {
+    width: 44vw;
+}
+
+.sendemaillink {
+    font-size: 1.9vw;
+    padding: 0.8vw 1.2vw;
+    border: 0.3vw solid #ffffff;
+    border-radius: 1.5vw;
+    margin: 0vw 1vw 0vw 1vw;
+}
+
+.closekeyboardlink {
+    font-size: 1.9vw;
+    padding: 0.8vw 1.2vw;
+    border: 0.3vw solid #ffffff;
+    border-radius: 1.5vw;
+    margin: 0vw 1vw 0vw 1vw;
+}
+
+/*Styling for screen size under 1600px*/
+@media only screen and (max-width: 1600px) {
+    body:not(.externallink) #fancybox-wrap {
+        width: auto !important;
+        height: auto !important;
+        top: 5vw !important;
+        /*left: 21vw !important;*/
+    }
+
+    div.lightbox > div > h2 {
+        font-size: 2.5vw !important;
+        line-height: 0vw !important;
+        padding: 2.5vw 2.5vw 2.5vw !important;
+    }
+
+    .lightbox {
+        width: 48vw !important;
+    }
+
+    #fancybox-close {
+        position: absolute !important;
+        top: 1.2vw !important;
+        right: -1vw !important;
+        width: 5vw !important;
+        height: 5vw !important;
+        background-size: 2vw !important;
+    }
+
+    #fancybox-wrap #fancybox-outer #fancybox-content .text {
+        font-size: 1vw !important;
+        line-height: 1.13vw !important;
+        padding: 0vw 1vw 0vw 0.5vw !important;
+    }
+
+    #cv-show-wrapper .scrollable-area, #cv-show-wrapper .scrollable-area-wrapper {
+        height: 26vw !important;
+    }
+}
+
+/*Styling for screen size under 1024px*/
+@media only screen and (max-width: 1024px) {
+    #fancybox-wrap {
+        width: auto !important;
+        height: auto !important;
+        top: 0vw !important;
+        left: auto !important;
+        right: auto !important;
+    }
+
+    #fancybox-content {
+        width: auto !important;
+        height: auto !important;
+    }
+
+    div#popuptextbox {
+        width: 85% !important;
+        font-size: calc(1.5vw * 2);
+        line-height: calc(1.9vw * 2);
+    }
+
+    #disclosure > div, #cv > div, #abstract > div, #help > div, #references > div {
+        width: auto;
+    }
+
+    .lightbox {
+        width: auto !important;
+        height: auto !important;
+    }
+
+    #fancybox-wrap #fancybox-outer #fancybox-content .text {
+        padding: 0vw 3vw 0vw 0.5vw !important;
+    }
+
+    #cv-show-wrapper .scrollable-area, #cv-show-wrapper .scrollable-area-wrapper {
+        height: auto !important;
+    }
+
+    #popup-cv p {
+        font-size: calc(1.3vw * 2);
+        line-height: calc(1.6vw * 2);
+    }
+
+    #disclosure > div, #cv > div, #abstract > div, #help > div {
+        height: auto;
+    }
+
+    #virtualKeyboard {
+        display: none;
+    }
+}
+/*End of Christer transfered css fixes from Template Design*/
+
+/*Christer adjust font size in header*/
+.iposter #iTitleStudy {
+    font-size: 1.8vw !important;
+    line-height: 1.8vw !important;
+    margin-bottom: 0.25vw !important;
+}
+
+.iposter #iAuthorNames {
+    font-size: 1.25vw !important;
+    line-height: 1.4vw !important;
+    margin-bottom: 0.3vw !important;
+}
+
+.iposter #iInstitutions {
+    font-size: 1vw !important;
+    line-height: 1.2vw !important;
+}
+
+.paraguay-tephinet body #popuptextbox {
+    font-size: calc(100% * 2) !important;
+    line-height: calc(100% * 1.3);
+}
+
+/*Christer added new styling to template 3*/
+/*.scrollable-area-wrapper {
+    height: 79px !important;
+}
+
+.scrollable-area {
+    height: 79px !important;
+}*/
+
+.column.long.twocenter .block.bg1 {
+    height: 18.23vw !important;
+    border-radius: 0 0 0vw 0vw !important;
+    /* padding: 0 0 0.52vw !important; */
+}
+
+/*.lowerboxes {
+    margin: 2.9vw 0vw 0vw 0vw;
+}*/
+
+.page1 .column .block .more span {
+    background-size: contain !important;
+}
+/*End of Christer added new styling to template 3*/
+

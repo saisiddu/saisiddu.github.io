@@ -1,0 +1,344 @@
+#redactorUpload_modal {
+    display:none;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 0;
+    background: #fff;
+    color: #000;
+    font-size: 12px !important;
+    font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+
+    z-index: 1150001;
+}
+#redactorUpload_modal header {
+    padding: 20px 30px 5px 30px;
+    font-size: 16px;
+}
+#redactorUpload_modal section {
+	padding: 20px 30px;
+
+}
+#redactorUpload_modal_close {
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    color: #999;
+    font-size: 26px;
+    cursor: pointer;
+}
+#redactorUpload_modal_close:hover {
+	color: #000;
+}
+#redactorUpload_modal label {
+	display: block !important;
+	float: none !important;
+	margin: 10px 0 3px 0 !important;
+	padding: 0 !important;
+	font-size: 12px !important;
+}
+#redactorUpload_modal textarea {
+	display: block;
+	margin-top: 4px;
+    line-height: 1.4em;
+}
+.redactorUpload_input  {
+	width: 99%;
+	font-size: 14px;
+}
+.redactorUpload_modal_box {
+	overflow: auto;
+	margin-bottom: 10px;
+	height: 350px;
+}
+#redactorUpload_image_box {
+	overflow: auto;
+	margin-bottom: 10px;
+	height: 270px;
+}
+#redactorUpload_image_box > div {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	/*max-width: 100px;*/
+    height: 100px;
+    display: inline-block;
+}
+#redactorUpload_image_box > div { /*customized*/
+	margin-right: 10px;
+	margin-bottom: 10px;
+	/*max-width: 100px;*/
+    height: 100px;
+    display: inline-block;
+}
+#redactorUpload_image_box > div > div.buttons { /*customized*/
+    margin-top: -5px;
+}
+#redactorUpload_image_box > div > div.buttons span { /*customized*/
+    cursor:pointer;
+    background-color: #ddd;
+    display:inline-block;
+    padding:2px 4px;
+    margin:0px 2px 0 0;
+}
+#redactorUpload_image_box > div > img { /*customized*/
+	cursor: pointer;
+    min-width: 40px;
+    max-width: 200px;
+    height: 80px;
+}
+/*#redactor_image_box img {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  max-width: 100px;
+  cursor: pointer;
+}*/
+#redactorUpload_tabs {
+	margin-bottom: 18px;
+}
+#redactorUpload_tabs a {
+    display: inline-block;
+    margin-right: 2px;
+    padding: 4px 14px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    line-height: 1;
+}
+#redactorUpload_tabs a:hover, 
+#redactorUpload_tabs a.redactorUpload_tabs_act {
+	/*padding: 5px 15px;
+	border: none;
+	background-color: #ddd;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .4) inset;
+	color: #777 !important;
+	text-decoration: none !important;
+	text-shadow: 0 1px 0 #eee;*/
+    border-color: #eee;
+    color: #999 !important;
+    text-decoration: none !important;
+}
+#redactorUpload_modal footer {
+	/*padding: 9px 30px 20px 30px;
+	border-radius: 0 0 3px 3px;
+	text-align: right;*/
+}
+
+#redactorUpload_modal footer button {
+  position: relative;
+  width: 100%;
+  padding: 10px 16px;
+  margin: 0;
+  outline: none;
+  border: none;
+  background-color: #ddd;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 12px;
+  font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif;
+  line-height: 1;
+  cursor: pointer;
+}
+#redactorUpload_modal footer button:hover {
+  color: #777;
+  background: none;
+  background: #bbb;
+  text-decoration: none;
+}
+#redactorUpload_modal footer button.redactorUpload_modal_delete_btn {
+  background: none;
+  color: #fff;
+  background-color: #b52525;
+}
+#redactorUpload_modal footer button.redactorUpload_modal_delete_btn:hover {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #881b1b;
+}
+#redactorUpload_modal footer button.redactorUpload_modal_action_btn {
+  background: none;
+  color: #fff;
+  background-color: #2461b5;
+}
+#redactorUpload_modal footer button.redactorUpload_modal_action_btn:hover {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #1a4580;
+}
+
+#redactorUpload_modal input[type="radio"],
+#redactorUpload_modal input[type="checkbox"] {
+	position: relative;
+	top: -1px;
+}
+#redactorUpload_modal input[type="text"],
+#redactorUpload_modal input[type="password"],
+#redactorUpload_modal input[type="email"],
+#redactorUpload_modal textarea {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 1px 2px;
+    height: 23px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+    color: #333;
+    font-size: 13px;
+    font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif;
+    line-height: 1;
+    -moz-transition: border 0.3s ease-in;
+    transition: border 0.3s ease-in;
+}
+#redactorUpload_modal textarea {
+	display: block;
+    margin-top: 4px;
+    line-height: 1.4em;
+}
+#redactorUpload_modal input:focus,
+#redactorUpload_modal textarea:focus {
+	outline: none;
+	border-color: #5ca9e4;
+	box-shadow: 0 0 0 2px rgba(70, 161, 231, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+}
+#redactorUpload_modal_close {
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  color: #999;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.redactorUpload_modal_btn_hidden {
+  display: none;
+}
+/*.redactorUpload_modal_btn {
+	border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
+    position: relative;
+	display: inline-block;
+	margin-left: 8px;
+	padding: 6px 16px 5px 16px;
+	outline: none;
+	border-radius: 4px;
+	background-color: #f3f3f3;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0px #ffffff;
+    font-weight: normal;
+    font-size: 12px;
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    line-height: 1;
+    cursor: pointer;
+    background-image: linear-gradient(top, #ffffff, #e1e1e1);
+}*/
+/*.redactorUpload_modal_btn:hover {
+	color: #555;
+}
+.redactorUpload_modal_btn:hover {
+	background: none;
+	background: #f3f3f3;
+	text-decoration: none;
+	text-shadow: 0 1px 0px rgba(255, 255, 255, 0.8);
+	filter: none;
+}*/
+
+
+/* Drag and Drop Area */
+.redactorUpload_droparea {
+	position: relative;
+    margin: auto;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.redactorUpload_droparea .redactorUpload_dropareabox {
+	position: relative;
+    z-index: 1;
+    padding: 60px 0;
+    width: 99%;
+    border: 1px dashed #ddd;
+    background: #fff;
+    text-align: center;
+}
+.redactorUpload_droparea .redactorUpload_dropareabox, .redactorUpload_dropalternative {
+    color: #555;
+    font-size: 12px;
+}
+.redactorUpload_dropalternative {
+	margin: 4px 0 2px 0;
+}
+.redactorUpload_dropareabox.hover {
+    border-color: #aaa;
+    background: #efe3b8;
+}
+.redactorUpload_dropareabox.error {
+    border-color: #dcc3c3;
+    background: #f7e5e5;
+}
+.redactorUpload_dropareabox.drop {
+    border-color: #e0e5d6;
+    background: #f4f4ee;
+}
+
+/* =Progress
+-----------------------------------------------------------------------------*/
+#redactorUpload-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000000;
+  height: 10px;
+}
+#redactorUpload-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #3d58a8;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  -webkit-animation: upload-progress-bar-stripes 2s linear infinite;
+  -o-animation: upload-progress-bar-stripes 2s linear infinite;
+  animation: upload-progress-bar-stripes 2s linear infinite;
+  background-size: 40px 40px;
+}
+@-webkit-keyframes upload-progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@-o-keyframes upload-progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes upload-progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+

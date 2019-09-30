@@ -9,3 +9,4 @@ location: "San Francisco, California"
 ---
 
 In this work, I looked at the elevation control on vegetation organization in semiarid central New Mexico. I used an ecohydrology model (CATGraSS) built using Landlab's ecohydrology components.
+Access the poster ***[here](http://saisiddu.github.io/files/Sai_AGU_2015_poster.pdf)***. 

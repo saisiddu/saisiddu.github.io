@@ -1,0 +1,336 @@
+﻿.clsVisibilityShow {
+    display: none;
+}
+
+.custom-chat {
+    caret-color: red;
+    font: 16px "Helvetica", "Arial", "sans-serif"
+}
+
+.timepicker {
+    overflow: hidden;
+}
+
+    .timepicker .datetimepicker-hours,
+    .timepicker .datetimepicker-minutes > table {
+        margin-top: -40px;
+    }
+
+.custom-w {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.form-b {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 25px 15px 25px;
+    float: left;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.width50per {
+    width: 50%;
+    float: left
+}
+
+.width100per {
+    width: 100%;
+    float: left
+}
+
+.width15per {
+    width: 15%;
+    float: left
+}
+
+.width85per {
+    width: 85%;
+    float: left
+}
+
+.form-b label {
+    margin: 0 0 10px 0;
+    display: block;
+    padding: 0;
+    font-size: 18px;
+    color: #808080
+}
+
+.form-b h3 {
+    margin: 4px 0 0 0;
+    padding: 0;
+    font-size: 20px;
+    color: #000
+}
+
+.input-f {
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 34px;
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border-radius: 3px;
+}
+
+    .input-f:focus {
+        outline: 0 none !important;
+        box-shadow: none !important;
+    }
+
+
+.btn-instr {
+    margin: 0;
+    padding: 8px 20px;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+    float: right;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+    .btn-instr:hover {
+        color: #fff;
+        background: #046380;
+        text-decoration: none;
+    }
+
+.pull-l {
+    float: left;
+}
+
+.pull-r {
+    float: right;
+}
+
+.textarea-f {
+    width: 100%;
+    float: left;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: 14px;
+    border-radius: 0 !important;
+    font-size: 14px;
+    color: #666;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 15px;
+    outline: 0 none;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+    .textarea-f:focus {
+        outline: 0 none !important;
+        box-shadow: none !important;
+        border-color: #ccc
+    }
+
+.from-field {
+    width: 100%;
+    position: relative;
+    border: 1px solid #ccc;
+    height: 32px;
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+    padding: 0 10px 0 60px;
+    outline: 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+    .from-field span {
+        font-size: 12px;
+        background: #ccc;
+        position: absolute;
+        display: block;
+        text-align: center;
+        padding-top: 8px;
+        width: 60px;
+        height: 100%;
+        left: 0;
+        color: #fff;
+        box-sizing: border-box;
+    }
+
+    .from-field input[type="text"] {
+        width: 100%;
+        border: 0;
+        height: 100%;
+        color: #666;
+        padding: 0 !important;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        margin: 0 !important;
+        /*background: url(../images/ico-clock.png) no-repeat right center;*/
+        outline: 0 none;
+    }
+
+    .from-field input:focus {
+        outline: 0 none !important;
+        box-shadow: none !important;
+    }
+
+.btn-savesettings {
+    margin: 0 0 15px 0;
+    padding: 8px 30px;
+    font-weight: normal;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1d1d1a;
+    background: #f8d65b;
+    text-decoration: none;
+    border: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    float: left;
+    display: block;
+    outline: 0 none;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.btn-startchat {
+    margin: 0 0 0 0;
+    padding: 8px 30px;
+    font-weight: normal;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background: #278938;
+    text-decoration: none;
+    border: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    float: right;
+    cursor: pointer;
+    display: block;
+    outline: 0 none;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.mtp-10 {
+    margin-top: 10px
+}
+
+.mtp-20 {
+    margin-top: 20px
+}
+
+.mtp-30 {
+    margin-top: 30px
+}
+
+.mtp-40 {
+    margin-top: 40px
+}
+
+.mtp-50 {
+    margin-top: 50px
+}
+
+.time-date {
+    border: 1px solid #ccc;
+    width: 100%;
+    float: left;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.input-datefield {
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 34px !important;
+    font-size: 14px;
+    border-radius: 0 !important;
+    color: #666;
+    margin: 0;
+    padding: 0 10px;
+    outline: 0;
+    /*background: url(../images/ico-calendar.png) no-repeat right 10px center;*/
+    outline: 0 none;
+    box-sizing: border-box;
+    border-radius: 3px !important;
+}
+
+    .input-datefield:focus {
+        outline: 0 none !important;
+        box-shadow: none !important;
+    }
+
+.small-label {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color: #666
+}
+
+.btn-start-chat {
+    margin: 60px 250px 0px 0 !important;
+}
+.txt-chat-time {
+    width: 98%;
+    height: 85%;
+    padding: 0px 4px 0px 6px;
+}
+
+@media only screen and (max-width:767px) {
+
+    .width50per {
+        width: 100%
+    }
+
+    .btn-savesettings {
+        float: none;
+        width: 220px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .btn-startchat {
+        float: none;
+        width: 220px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .btn-instr {
+        display: inline-block;
+        float: none;
+    }
+
+    .form-b h3 {
+        margin-bottom: 25px;
+    }
+
+    .small-label {
+        margin-top: 0
+    }
+}
+
+@media only screen and (max-width:479px) {
+
+    .width15per {
+        width: 100%
+    }
+
+    .width85per {
+        width: 100%
+    }
+
+    .btn-savesettings, .btn-startchat {
+        width: 100%
+    }
+}

@@ -1,0 +1,102 @@
+﻿
+var userId = "";
+var sessionId = "";
+$(document).ready(function () {
+
+  //  runSignalR();
+});
+function runSignalR() {
+ 
+    userId = $("#hdnfldUserId").val();
+    sessionId = $("#hdnfldSessionId").val();
+    // localStorage.clear();
+    
+    if ((userId == undefined && sessionId == undefined) || (userId == '' || sessionId == '' || userId == null || sessionId == null)) {        
+        initSignalRBeforeLogin();
+    } else {
+        initSignalR();
+    }
+    //$('#btnLogoutUserNow').click(function () {
+    //    var modal = document.getElementById('otherUserLoggedInModal');
+    //    modal.style.display = "none";
+    //});
+    if (localStorage.getItem('logoutForcefully') != undefined) {
+        localStorage.removeItem('logoutForcefully');
+        setTimeout(function () { location.reload(true); }, 3000);
+    }
+}
+function initSignalRBeforeLogin() {
+    $.connection.hub.url = "/signalr";
+    var myHub = $.connection.myHub;
+    if ($.connection.hub.start() + '' != 'undefined') {
+        $.connection.hub.start().done(function () {
+            myHub.server.addLoggedUsers('', '');
+        });
+    }
+}
+function initSignalR() {
+    //signalr
+    //Set the hubs URL for the connection
+    $.connection.hub.url = "/signalr";
+    // Declare a proxy to reference the hub.
+    var myHub = $.connection.myHub;
+    //cl("[SignalR] Hub url set to: " + $.connection.hub.url);
+
+    //check if hub available
+    if ($.connection.hub.start() + '' != 'undefined') {
+
+        //Get shortname to be used for screenID
+        //cl("Reading hash parameter 'screenID'.");
+        //videoLibrary.screenID = $.QueryString["s"];
+
+        //HACK: Temporary solution for screenID
+        //userName = "gallery";
+
+        //If no screenID, alert and abort
+        if (userId == null && userId != "") {
+            //cl("Querystring s [shortname] not set. Can't continue. Reload page in 5 seconds.");
+            setTimeout(function () { location.reload(true); }, 5000);
+            return;
+        }
+
+        //cl("'screenID' set to: " + galleryscreenID);
+
+        // Create a function that the hub can call to reload
+        myHub.client.broadcastMessage = function (user, session) {
+            if (userId == user && sessionId != session) {
+                var modal = document.getElementById('otherUserLoggedInModal');
+                //modal.style.display = "block";
+                //$('#Save').click();
+                //javascript: __doPostBack('ctl00$LoginView$LoginStatus1$ctl00', '')
+            }
+            if (userId == user && sessionId == session) {
+                //window.location = window.location.href;
+            }
+        };
+        // Start the connection.
+        $.connection.hub.start().done(function () {
+            //connected
+            //cl("[SignalR] Connection to hub done with connectionID: " + $.connection.hub.id);
+
+            // register screenID with connection
+            myHub.server.addLoggedUsers(userId, sessionId);
+            //cl("[SignalR] RegisterScreen called in hub with parameters { screenID : " + galleryscreenID + " }");
+        });
+
+
+
+    } else {
+        //cl("[SignalR] Hub has not loaded. Check if SignalR javascript reference is active. Reloading page in 60000 * 5 seconds to try again.");
+        setTimeout(function () { location.reload(true); }, 60000 * 5);
+    }
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}

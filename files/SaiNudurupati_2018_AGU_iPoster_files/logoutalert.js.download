@@ -1,0 +1,227 @@
+﻿$(function() {
+    //$("#session-expire-warning-modal").modal('hide');
+    $('*').bind('mousemove click mouseup mousedown keydown keypress keyup submit change mouseenter scroll resize dblclick',function() {
+        ResetThisSession();
+    });
+    $('#btnOk').click(function() {
+        //$('#Save').click();
+        ResetThisSession();
+        ResetThisSessionR();
+        //window.location = window.location.href;
+        var modal=document.getElementById('myModal');
+        modal.style.display='none';
+        StartThisSessionTimer();
+    });
+
+    $('#btnLogoutNow').click(function() {
+        //Code by IDS
+        $(window).unbind('beforeunload');
+        window.onunload=null;
+        window.onbeforeunload=null;
+        $(window).off('beforeunload');
+        var modal=document.getElementById('myModal');
+        modal.style.display='none';
+        $('#Save').click();
+        javascript: __doPostBack('ctl00$LoginView$LoginStatus1$ctl00','')
+    });
+    $('.close').click(function() {
+        //$('#Save').click();
+        ResetThisSession();
+        ResetThisSessionR();
+        //window.location = window.location.href;
+        var modal=document.getElementById('myModal');
+        modal.style.display='none';
+        StartThisSessionTimer();
+    });
+
+});
+$(document).ready(function() {
+    $('#ctl00_LoginView_LoginStatus1').click(function(e) {
+        $(window).unbind('beforeunload');
+        window.onunload=null;
+        window.onbeforeunload=null;
+        $(window).off('beforeunload');
+    });
+    $('.back-button').click(function(e) {
+        $(window).unbind('beforeunload');
+        window.onunload=null;
+        window.onbeforeunload=null;
+        $(window).off('beforeunload');
+    });
+
+    $('#Delete').click(function(e) {
+        $(window).unbind('beforeunload');
+        window.onunload=null;
+        window.onbeforeunload=null;
+        $(window).off('beforeunload');
+    });
+
+    $('[name="ctl00$LoginView$Posters"]').change(function(e) {
+        $(window).unbind('beforeunload');
+        window.onunload=null;
+        window.onbeforeunload=null;
+        $(window).off('beforeunload');
+    });
+    if($('#ctl00_LoginView_LoginStatus1').text()===''||null||undefined) {
+        //debugger;
+        if(window.event) {
+            $(window).unbind('beforeunload');
+            window.onunload=null;
+            window.onbeforeunload=null;
+            $(window).off('beforeunload');
+        }
+    }
+
+});
+
+var secondTick=0,
+    secondTickR=0,
+    tick,
+    tickR;
+
+function ResetThisSession() {
+    secondTick=0;
+}
+function ResetThisSessionR() {
+    secondTickR=0;
+}
+function StartThisSessionTimer() {
+
+    secondTick++;
+    var logoutTime=localStorage.getItem('logoutTime');
+    if(!logoutTime) {
+        logoutTime=5;
+    } else {
+        logoutTime=localStorage.getItem('logoutTime');
+    }
+    var timeInSecondsAfterSessionOut=logoutTime*60;
+    //console.log('timeInSecondsAfterSessionOut= ' + timeInSecondsAfterSessionOut + " ");
+    //console.log('secondTick= ' + secondTick);
+    var timeLeft=((timeInSecondsAfterSessionOut-secondTick)/60).toFixed(0); // in minutes
+    timeLeft=timeInSecondsAfterSessionOut-secondTick; // override, we have 30 secs only 
+
+    $('#spanTimeLeft').html(timeLeft);
+    if(secondTick>timeInSecondsAfterSessionOut) {
+        clearTimeout(tick);
+        if($('#Save').is(':visible')===true) {
+
+            var modal=document.getElementById('myModal');
+            modal.style.display='block';
+            $('#myModal #btnOk').on('click',function() {
+                clearTimeout(tickR);
+            });
+            StartThisSessionTimerR();
+        }
+        return;
+    }
+
+    tick=setTimeout('StartThisSessionTimer()',1000);
+}
+function StartThisSessionTimerR() {
+
+    secondTickR++;
+    var logoutTimeAfter=localStorage.getItem('logoutAfterTime');
+    if(!logoutTimeAfter) {
+        logoutTimeAfter=1;
+    } else {
+        logoutTimeAfter=localStorage.getItem('logoutAfterTime');
+    }
+    var timeInSecondsAfterSessionOutR=logoutTimeAfter*60;
+    var timeLeftR=((timeInSecondsAfterSessionOutR-secondTickR)/60).toFixed(0); // in minutes
+    timeLeftR=timeInSecondsAfterSessionOutR-secondTickR;
+    $('#spanTimeLeftRemaining').text(timeLeftR);
+
+    if(secondTickR>timeInSecondsAfterSessionOutR) {
+        clearTimeout(tickR);
+        $('#Save').click();
+        $('#btnLogoutNow').click();
+        var modal=document.getElementById('myModal');
+        modal.style.display='none';
+        return;
+    }
+    tickR=setTimeout('StartThisSessionTimerR()',1000);
+}
+StartThisSessionTimer();
+
+//Code by IDS for Browser Close functionality.
+//$(document).keydown(function (e) {
+//    //    if (e.keyCode == 13) {
+//    //        debugger;
+//    //        e.preventDefault();
+//    //        $(window).unbind('beforeunload');
+//    //        window.onunload = null;
+//    //        window.onbeforeunload = null;
+//    //        $(window).off("beforeunload");
+//    //        return false;
+//    //    }
+//    if (e.keyCode == 116) {
+//        $(window).unbind('beforeunload');
+//        window.onunload = null;
+//        window.onbeforeunload = null;
+//        $(window).off("beforeunload");
+//    }
+//    if (e.keyCode == 82 && e.ctrlKey) {
+//        $(window).unbind('beforeunload');
+//        window.onunload = null;
+//        window.onbeforeunload = null;
+//        $(window).off("beforeunload");
+//    }
+//});
+
+//var isCtrl = false;
+//var isShift = false;
+
+//$(document).keydown(function (e) {
+//    if (e.which == 17) {
+//        isCtrl = true;
+//    }
+//    if (e.which == 16) {
+//        isShift = true;
+//    }
+//    if (e.which == 116 && isCtrl && isShift) {
+//        //if (e.ctrlKey  && e.shiftKey && e.keyCode == 116) {
+//        $(window).unbind('beforeunload');
+//        window.onunload = null;
+//        window.onbeforeunload = null;
+//        window.location.reload(true);
+//        $(window).off("beforeunload");
+//    }
+//});
+
+////Attach the event click for all links in the page
+//$(document).ready(function () {
+//    $("a").click(function () {
+//        $(window).unbind('beforeunload');
+//        window.onunload = null;
+//        window.onbeforeunload = null;
+//        $(window).off("beforeunload");
+//    });
+//});
+
+
+////// Attach the event submit for all forms in the page
+//$("form").bind("submit", function () {
+//    $(window).unbind('beforeunload');
+//    window.onunload = null;
+//    window.onbeforeunload = null;
+//    $(window).off("beforeunload");
+//});
+
+//$("#ctl00_LoginView_LoginStatus1").click(function () {
+//    $(window).unbind('beforeunload');
+//    window.onunload = null;
+//    window.onbeforeunload = null;
+//    $(window).off("beforeunload");
+//});
+////// Attach the event click for all inputs in the page
+//$("input[type=submit]").bind("click", function () {
+//    window.onunload = null;
+//    window.onbeforeunload = null;
+//    $(window).off("beforeunload");
+//});
+function warning() {
+    return ''; //U can write any custom message here.
+}
+window.onbeforeunload=warning;
+
+
