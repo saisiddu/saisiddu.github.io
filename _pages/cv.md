@@ -26,28 +26,28 @@ Education
 
 Work experience
 ======
-***Research Assistant***, Department of Civil & Environmental Engineering  [Sep 2012 - Present]
-University of Washington, Seattle, WA
+***Research Assistant***, Department of Civil & Environmental Engineering
+University of Washington, Seattle, WA  [Sep 2012 - Present]
 * Core developer of Landlab, an open source Python toolkit for earth surface modeling
 * Developed components such as SoilMoisture, Vegetation, VegCA, LandslideProbability, and more
 * Developing numerical models to study the effects of topography, climate, and disturbances like wildfires and grazing on vegetation organization in semiarid areas of southwestern United States 
 * Developed instructional tutorials for adaptation of ecohydrologic models developed in Landlab
 * Served as an instructor for workshops to help scientists and students adapt Landlab
 
-***Research Assistant***, Department of Engineering Mechanics  [Jan 2010 - Jun 2011]
-University of Nebraska, Lincoln, NE
+***Research Assistant***, Department of Engineering Mechanics
+University of Nebraska, Lincoln, NE  [Jan 2010 - Jun 2011]
 * Designed and fabricated an ultrasonic bioreactor to automate chondrocyte cell culture
 * Scripted the custom control software using Matlab for the bioreactor
 
-***Student Worker***, Department of Natural Resources  [Jan 2009 - Aug 2009]
-University of Nebraska, Lincoln, NE
+***Student Worker***, Department of Natural Resources
+University of Nebraska, Lincoln, NE  [Jan 2009 - Aug 2009]
 * Modeled Aeolian dunes using numerical model developed in Matlab and investigated the effect of environmental conditions on formation of these dunes
 
 
 Service and leadership
 ======
-***Founder & Organizer***, Scientific Computing Meetup  [Sep 2017 - Present]
-Puget Sound Programming in Python (PuPPy) meetup, Seattle, WA
+***Founder & Organizer***, Scientific Computing Meetup
+Puget Sound Programming in Python (PuPPy) meetup, Seattle, WA  [Sep 2017 - Present]
 * Designed and formalized monthly meeting schedule and organized monthly meetups
 * Organized ‘Introduction to Machine Learning’ workshop in August 2018 and raised funds for PuPPy
 
