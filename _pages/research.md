@@ -11,8 +11,8 @@ of terrain characteristics, climate, and disturbance
 organization, that is a resultant of competition between
 various plant species such as trees, shrubs, and grass.
 The watersheds I have looked at in the past are from
-Sevilleta National Wildlife Refuge (SNWR) near Socorro, New Mexico,
-and Bartha Brother Ranch (BBR), Nebraska.
+[Sevilleta National Wildlife Refuge (SNWR)](https://www.fws.gov/refuge/sevilleta/) near Socorro, New Mexico,
+and [Barta Brother Ranch (BBR)](http://snr.unl.edu/aboutus/where/fieldsites/bartabrothersranch.aspx), Nebraska.
 
 My research workflow typically includes the following steps:
 * study about the current state of an ecosystem
