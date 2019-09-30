@@ -24,7 +24,9 @@ an **open-source Python toolkit** used to create land surface models.
 *Landlab* is a collaborative effort, geared towards engaging the community
 to maintain a repository of tools that help building, coupling,
 and exploring 2D numerical models. I have contributed well-documented,
- unit-tested, and doc-tested code for components
+unit-tested, and doc-tested code for ecohydrologic *components*,
+*utilities*, and more. I have also developed *tutorials* to
+demonstrate model building and application using *Landlab*.
 Checkout the following pages;
 [papers](https://github.com/landlab/landlab/wiki/Landlab-Papers-and-Presentations),
 [workshops](https://github.com/landlab/landlab/wiki/Landlab-Clinics-and-Workshops),
