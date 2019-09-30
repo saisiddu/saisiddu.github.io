@@ -33,7 +33,7 @@ Checkout the following pages;
 and [tutorials](https://github.com/landlab/landlab/wiki/Tutorials)
 to learn more about *Landlab*. I would also recommend checking out
 the *Landlab* resources available on ***[Hydroshare](https://www.hydroshare.org/)***.
-*Hydroshare* is a wonderful web based hydrologic information sytem
+*Hydroshare* is a wonderful web based hydrologic information system
 designed for users to share and publish data and models.
 
 Apart from writing code and working with papers, I like playing badminton. 
