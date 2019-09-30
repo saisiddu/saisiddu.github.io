@@ -41,3 +41,8 @@ I also enjoy hiking and biking.
 I enjoy watching Cricket (the game) and 
 American football (both college and NFL).
 
+**[Publications](https://saisiddu.github.io/publications/)**    
+**[Presentations](https://saisiddu.github.io/talks/)**   
+**[Teaching](https://saisiddu.github.io/teaching/)**   
+**[CV](https://saisiddu.github.io/cv/)**   
+**[Contact](https://saisiddu.github.io/contact/)**   
