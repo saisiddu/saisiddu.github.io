@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Sai S. Nudurupati"
+title                    : "About me"
 title_separator          : "-"
 name                     : &name "Sai S. Nudurupati"
 description              : &description "Scientist, Landlab Developer, Numerical Modeler, Python Programmer, Engineer, Scientific Computing Meetup Organizer"
