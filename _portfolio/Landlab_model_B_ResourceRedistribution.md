@@ -8,7 +8,7 @@ In this work, we investigate the role of disturbances, such as fires and
 grazing, on vegetation organization in arid areas characterized with
 aeolian sediment transport. We adapted a conceptual cellular automaton
 model that couples vegetation states and soil resource level from 
-[Ravi et al. (2009)](Ravi, S., & D’Odorico, P. (2009). Post-fire resource redistribution and fertility island dynamics in shrub encroached desert grasslands: a modeling approach. Landscape Ecology, 24(3), 325-335.).
+[Ravi et al. (2009)](https://link.springer.com/article/10.1007/s10980-008-9307-7).
 
 We demonstrate the application of this model in Landlab in the figure below: 
 (a) Ecosystem response to a natural fire regime and minimal grazing:
