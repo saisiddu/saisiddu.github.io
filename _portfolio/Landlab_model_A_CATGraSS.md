@@ -5,18 +5,11 @@ collection: portfolio
 ---
 
 Semiarid and desert ecosystems are characterized by patchy and dynamic 
-vegetation. ​Topography plays a commanding role on vegetation patterns. Plant
- biomes and biodiversity vary systematically with slope and aspect, 
-from shrublands in low desert elevations, to mixed grass/shrublands in 
-mid elevations, and forests at high elevations. We  investigate the role 
-of elevation dependent climatology and aspect on vegetation organization 
-in semiarid catchments where elevation and hillslope aspect play a defining 
-role on plant types. We use observational and satellite-based and 
-numerical modeling using Landlab. We developed the 
-Cellular Automaton Tree Grass Simulator CATGraSS [Zhou et al., 2013], 
-an ecohydrologic cellular automaton model, now implemented in Landlab. 
-The model couples local vegetation dynamics (that simulate biomass production 
-based on local soil moisture and evapotranspiration) and plant establishment 
+vegetation. We implemented the Cellular Automaton Tree Grass 
+Simulator CATGraSS [[Zhou et al., 2013]](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/wrcr.20259), an ecohydrologic 
+cellular automaton model, in Landlab. The model couples local 
+vegetation dynamics (that simulate biomass production based on 
+local soil moisture and evapotranspiration) and plant establishment 
 and mortality based on competition for resources and space. This model is 
 driven by elevation dependent rainfall pulses and solar radiation. 
 An example of CATGraSS model application in Landlab is presented in the 
@@ -31,3 +24,5 @@ and grass dominance in the modeled domain, while trees were outcompeted.
 <img src='/images/CATGraSS_Hobley_et_al.PNG'>
 
 This figure is from [Hobley et al. 2017](https://saisiddu.github.io/publication/2017-01-01-Landlab-3).
+
+*PFT - Plant Functional Type (Tree, Shrub, or Grass)
