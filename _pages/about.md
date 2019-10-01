@@ -39,8 +39,8 @@ designed for users to share and publish data and models.
 I am a founder and organizer of ***[Scientific Computing Meetup](https://github.com/PuPPy-Python/Scientific_Computing)***.
 *Scientific Computing* is a *Special Interest Group* (SIG) of ***[Puget Sound 
 Programming Python (PuPPy) meetup](https://www.meetup.com/PSPPython/)***.
-We invite speakers from diverse backgrounds to talk about their fun (or serious)
-projects.
+We invite speakers for our monthly meetings from diverse backgrounds
+to talk about their fun (or serious) projects.
 
 Apart from writing code and reading papers, I like playing badminton. 
 I also enjoy hiking and biking.

@@ -1,12 +1,12 @@
 ---
 title: "Vegetation organization in a Semiarid Ecosystem in Central New Mexico"
-excerpt: "Model A - Flat surface<br/><img src='/images/CATGraSS_Hobley_et_al.PNG'>"
+excerpt: "Vegetation Organization - Flat Watershed<br/><img src='/images/CATGraSS_Hobley_et_al.PNG'>"
 collection: portfolio
 ---
 
 Semiarid and desert ecosystems are characterized by patchy and dynamic 
-vegetation. ​Topography plays a commanding role on vegetation patterns.  
-Plant biomes and biodiversity vary systematically with slope and aspect, 
+vegetation. ​Topography plays a commanding role on vegetation patterns. Plant
+ biomes and biodiversity vary systematically with slope and aspect, 
 from shrublands in low desert elevations, to mixed grass/shrublands in 
 mid elevations, and forests at high elevations. We  investigate the role 
 of elevation dependent climatology and aspect on vegetation organization 
