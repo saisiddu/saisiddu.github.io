@@ -17,8 +17,8 @@ figure below:
 (a) CATGraSS model flow chart showing flow between different model components; 
 (b) time series of modeled grass, shrub, and tree cover fractions for CATGraSS 
 implementation on a flat domain for central New Mexico climatology. 
-Spatial distributions of plants in model initial condition (c), 
-after 1,000 years (d), and year 1,500.  Model shows epochs of shrub 
+(c) Spatial distributions of plants in model: (i) initial condition, 
+(ii) after 1,000 years, and (iii) year 1,500.  Model shows epochs of shrub 
 and grass dominance in the modeled domain, while trees were outcompeted.
 
 <img src='/images/CATGraSS_Hobley_et_al.PNG'>
