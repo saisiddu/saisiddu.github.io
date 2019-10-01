@@ -5,7 +5,7 @@ excerpt: "My Research"
 author_profile: true
 ---
 
-Like I mentioned in the other page, I am investigating the influence 
+Like I mentioned in the 'About me' page, I am investigating the influence 
 of terrain characteristics, climate, and disturbance
 (like wildfires and grazing) variability on the vegetation
 organization, that is a resultant of competition between
@@ -21,3 +21,5 @@ My research workflow typically includes the following steps:
 * create numerical models using ***[Landlab]( http://landlab.github.io/#/)***
 * analyze the results and cross-check with observations
 * repeat few or all of the above steps - > *'Re'search*
+
+

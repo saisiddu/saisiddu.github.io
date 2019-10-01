@@ -43,7 +43,7 @@ Skills
 Service and leadership
 ======
 ***Founder & Organizer***, ***[Scientific Computing Meetup](https://github.com/PuPPy-Python/Scientific_Computing)***  
-Special Interest Group of Puget Sound Programming in Python (***[PuPPy](https://www.meetup.com/PSPPython/)***) meetup, Seattle, WA  [Sep 2017 - Present]
+Puget Sound Programming in Python (***[PuPPy](https://www.meetup.com/PSPPython/)***) meetup, Seattle, WA  [Sep 2017 - Present]
 * Designed and formalized monthly meeting schedule and organized monthly meetups
 * Organized ‘Introduction to Machine Learning’ workshop in August 2018 and raised funds for PuPPy
 

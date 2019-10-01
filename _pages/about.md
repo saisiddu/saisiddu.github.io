@@ -37,7 +37,7 @@ the *Landlab* resources available on ***[Hydroshare](https://www.hydroshare.org/
 designed for users to share and publish data and models.
 
 I am a founder and organizer of ***[Scientific Computing Meetup](https://github.com/PuPPy-Python/Scientific_Computing)***.
-Scientific Computing is a Special Interest Group (SIG) of ***[Puget Sound 
+*Scientific Computing* is a *Special Interest Group* (SIG) of ***[Puget Sound 
 Programming Python (PuPPy) meetup](https://www.meetup.com/PSPPython/)***.
 We invite speakers from diverse backgrounds to talk about their fun (or serious)
 projects.
