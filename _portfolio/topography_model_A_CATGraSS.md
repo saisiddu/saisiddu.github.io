@@ -1,6 +1,6 @@
 ---
 title: "Influence of topography on vegetation organization in a semiarid ecosystem in central New Mexico"
-excerpt: "Topography <br/><img src='/images/topography_model_A_comparison.png'>"
+excerpt: "Influence of topography on vegetation organization<br/><img src='/images/topography_model_A_comparison.png'>"
 collection: portfolio
 ---
 

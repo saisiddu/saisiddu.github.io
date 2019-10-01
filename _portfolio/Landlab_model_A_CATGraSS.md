@@ -1,6 +1,6 @@
 ---
-title: "Vegetation organization in a Semiarid Ecosystem in Central New Mexico"
-excerpt: "Vegetation Organization - Flat Watershed<br/><img src='/images/CATGraSS_Hobley_et_al.PNG'>"
+title: "Vegetation organization in a semiarid ecosystem in central New Mexico"
+excerpt: "Vegetation organization on a flat watershed<br/><img src='/images/CATGraSS_Hobley_et_al.PNG'>"
 collection: portfolio
 ---
 
