@@ -20,19 +20,17 @@ My research workflow typically includes the following steps:
 * hypothesize the processes involved
 * create numerical models using ***[Landlab]( http://landlab.github.io/#/)***
 * analyze the results and cross-check with observations
-* repeat few or all of the above steps - > *'Re'search*
+* repeat few or all of the above steps -> *'Re'search*
 
 In *Landlab*, earth surface processes are represented as *components*.
 To help myself and the community to quickly build ecohydrologic models,
-I created the following *Landlab* [*components*](https://landlab.readthedocs.io/en/latest/#developer-documentation) for *Landlab*:
+I created the following *Landlab* [*components*](https://landlab.readthedocs.io/en/latest/#developer-documentation):
 [SoilMoisture](https://landlab.readthedocs.io/en/latest/landlab.components.soil_moisture.html), 
 [Radiation](https://landlab.readthedocs.io/en/latest/landlab.components.radiation.html), 
 [PotentialEvapotranspiration](https://landlab.readthedocs.io/en/latest/landlab.components.pet.html), 
 [Vegetation](https://landlab.readthedocs.io/en/latest/landlab.components.vegetation_dynamics.html),
 and [VegCA](https://landlab.readthedocs.io/en/latest/landlab.components.plant_competition_ca.html). 
-These *components* can be coupled to build ecosystem models.
-
-I have created and applied various ecohydrologic models. I present
+These *components* can be coupled to build ecosystem models. I present 
 few examples below:
 - [Vegetation organization in a semiarid ecosystem in central New Mexico](https://saisiddu.github.io/portfolio/Landlab_model_A_CATGraSS/)
 - [Influence of topography on vegetation organization in a semiarid ecosystem in central New Mexico](https://saisiddu.github.io/portfolio/topography_model_A_CATGraSS/)
