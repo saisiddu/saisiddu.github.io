@@ -3,8 +3,6 @@ title: "Reusing Landlab ecohydrology model with bias corrected data from gridded
 excerpt: "Elevation dependent ecosystem response<br/><img src='/images/KI_paper.png'>"
 collection: portfolio
 ---
-Data Science and ecosystem modeling
-=====
 
 In this work, we:
 - downloaded hydrometeorology data for the state of New Mexico using OGH, a python package.
