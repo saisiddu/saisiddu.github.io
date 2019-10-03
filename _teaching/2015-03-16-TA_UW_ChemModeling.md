@@ -8,5 +8,3 @@ date: 2015-03-16
 location: "Seattle, Washington"
 ---
 
-- Conducted lab sessions 
-- Assisted students to adapt numerical modeling of transport and fate of chemicals in the environment with Matlab
