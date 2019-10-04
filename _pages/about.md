@@ -11,6 +11,7 @@ redirect_from:
 Hi! I am Sai Nudurupati. I am a Ph.D. candidate in the department of 
 Civil & Environmental Engineering, University of Washington, Seattle. 
 I am an Ecohydrologist, with a background in Mechanical Engineering.
+I am currently a member of [Watershed Dynamics lab](http://www.uwwatersheddynamics.com/).
 
 I am studying how climate influences vegetation dynamics in semi-arid 
 landscapes of southwest United States. I use numerical modeling to 
