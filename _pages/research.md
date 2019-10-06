@@ -17,9 +17,10 @@ and [Barta Brother Ranch (BBR)](http://snr.unl.edu/aboutus/where/fieldsites/bart
 My research workflow typically includes the following steps:
 * study about the current state of an ecosystem
 * visualize the current state by analyzing available observations
-* hypothesize the processes involved
-* create numerical models using ***[Landlab]( http://landlab.github.io/#/)***
-* analyze the results and cross-check with observations
+* understand the processes involved
+* create multi-layered numerical models using ***[Landlab]( http://landlab.github.io/#/)***
+* calibrate the model and cross-check with observations
+* create hypotheses and employ the models to forecast ecosystem response
 * repeat few or all of the above steps -> *'Re'search*
 
 In *Landlab*, earth surface processes are represented as *components*.
