@@ -17,7 +17,8 @@ landscapes of southwest United States. I use numerical modeling to
 investigate the influence of terrain characteristics, 
 climate, and disturbance (like wildfires and grazing) variability on 
 competition between various plant species, and the resulting 
-vegetation organization. 
+vegetation organization. Please check my [research](https://saisiddu.github.io/research/) page
+for more information.
 
 I am a developer of ***[Landlab]( http://landlab.github.io/#/)***, 
 an **open-source Python toolkit** used to create land surface models.

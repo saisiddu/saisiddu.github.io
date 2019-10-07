@@ -38,6 +38,15 @@ few examples below:
 - [Influence of disturbances on shrub invasion of grasslands in arid watersheds.](https://saisiddu.github.io/portfolio/Landlab_model_B_ResourceRedistribution/)
 - [Reusing Landlab ecohydrology model with bias corrected data from gridded hydrometeorology products.](https://saisiddu.github.io/portfolio/KI_paper_model_A/)
 
+
+You are welcome to checkout the [publications](https://saisiddu.github.io/publications/) 
+I have contributed to. I have also communicated my research through [presentations](https://saisiddu.github.io/talks/)
+at various conferences including 
+[AGU](https://www.agu.org/) Fall meetings, 
+[CSDMS](https://csdms.colorado.edu/wiki/Main_Page) Annual meetings, 
+and [CUAHSI](https://www.cuahsi.org/) Biennial meeting.
+
+
 I would love to discuss more about my research. Please [contact](https://saisiddu.github.io/contact/) me to ask
 any questions you may have.
 
