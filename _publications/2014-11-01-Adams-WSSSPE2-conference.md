@@ -6,6 +6,6 @@ excerpt: 'This is a conference paper.'
 date: 2012-01-01
 venue: 'Sustainable Software for Science: Practice and Experiences (WSSSPE2)'
 paperurl: ''
-citation: 'Adams, J., Nudurupati, S., Gasparini, N., Hobley, D., Hutton, E., Tucker, G., & Istanbulluoglu, E. (2014). Landlab: Sustainable software development in practice. In The Second Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE2), Nov, New Orleans, LA, USA (Vol. 16).'
+citation: 'Adams, J., <b>Nudurupati, S.</b>, Gasparini, N., Hobley, D., Hutton, E., Tucker, G., & Istanbulluoglu, E. (2014). Landlab: Sustainable software development in practice. In The Second Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE2), Nov, New Orleans, LA, USA (Vol. 16).'
 ---
 
