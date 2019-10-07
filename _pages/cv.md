@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 ***Ph.D.*** in Civil & Environmental Engineering, University of Washington, Seattle, WA, 2020 (expected)
-  * Dissertation: **Development of an open-source ecohydrology model using Landlab with applications in global change research.**
+  * Dissertation: **Development of open-source ecohydrology models using Landlab with applications in global change research.**
   * Advisor: [***Prof. Erkan Istanbulluoglu***](https://www.ce.washington.edu/facultyfinder/erkan-istanbulluoglu)
 
 ***M.S.*** in Engineering Mechanics, University of Nebraska, Lincoln, NE, 2012
