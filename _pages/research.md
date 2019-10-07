@@ -10,7 +10,7 @@ of terrain characteristics, climate, and disturbance
 (like wildfires and grazing) variability on the vegetation
 organization, that is a resultant of competition between
 various plant species such as trees, shrubs, and grass.
-The watersheds I have looked at in the past are from
+For my study, I have explored semiarid and arid watersheds from
 [Sevilleta National Wildlife Refuge (SNWR)](https://www.fws.gov/refuge/sevilleta/) near Socorro, New Mexico,
 and [Barta Brother Ranch (BBR)](http://snr.unl.edu/aboutus/where/fieldsites/bartabrothersranch.aspx), Nebraska.
 
@@ -19,7 +19,7 @@ My research workflow typically includes the following steps:
 * visualize the current state by analyzing available observations
 * understand the processes involved
 * create multi-layered numerical models using ***[Landlab]( http://landlab.github.io/#/)***
-* calibrate the model and cross-check with observations
+* calibrate the model and cross-check model performance with observations
 * create hypotheses and employ the models to forecast ecosystem response
 * repeat few or all of the above steps -> *'Re'search*
 
@@ -39,12 +39,12 @@ few examples below:
 - [Reusing Landlab ecohydrology model with bias corrected data from gridded hydrometeorology products.](https://saisiddu.github.io/portfolio/KI_paper_model_A/)
 
 
-You are welcome to checkout the [publications](https://saisiddu.github.io/publications/) 
-I have contributed to. I have also communicated my research through [presentations](https://saisiddu.github.io/talks/)
+I have communicated my research through [presentations](https://saisiddu.github.io/talks/)
 at various conferences including 
 [AGU](https://www.agu.org/) Fall meetings, 
 [CSDMS](https://csdms.colorado.edu/wiki/Main_Page) Annual meetings, 
-and [CUAHSI](https://www.cuahsi.org/) Biennial meeting.
+and [CUAHSI](https://www.cuahsi.org/) Biennial meeting, and
+ [publications](https://saisiddu.github.io/publications/). 
 
 
 I would love to discuss more about my research. Please [contact](https://saisiddu.github.io/contact/) me to ask
