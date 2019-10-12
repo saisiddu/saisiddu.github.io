@@ -29,7 +29,7 @@ Skills
 * Software
   * Python
     * Numpy, Scipy, Pandas, Matplotlib, Xarray,
-      BeautifulSoup, Scikit-learn
+      BeautifulSoup, Scikit-learn, BigQuery
   * Matlab
   * C++ & C
 * Geospatial:
