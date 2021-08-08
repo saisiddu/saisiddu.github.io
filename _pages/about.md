@@ -21,7 +21,8 @@ At RMA, I supported 2D and 3D hydrodynamic modeling of riverine, estuarine,
 and coastal ecosystems to study marine habitat health and flow dynamics
 in the Sacramento—San Joaquin River Delta, central California.
 
-I completed my Ph.D. in Civil & Environmental Engineering from the University of Washington, Seattle.
+I completed my Ph.D. in Civil & Environmental Engineering from the
+University of Washington, Seattle in August 2020.
 During my Ph.D., I studied how climate influences vegetation dynamics in semi-arid 
 landscapes of southwest United States. I used numerical modeling to 
 investigate the influence of terrain characteristics, 
