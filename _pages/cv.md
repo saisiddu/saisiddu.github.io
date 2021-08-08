@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-***Ph.D.*** in Civil & Environmental Engineering, University of Washington, Seattle, WA, 2020 (expected)
+***Ph.D.*** in Civil & Environmental Engineering, University of Washington, Seattle, WA, 2020
   * Dissertation: **Development of open-source ecohydrology models using Landlab with applications in global change research.**
   * Advisor: [***Prof. Erkan Istanbulluoglu***](https://www.ce.washington.edu/facultyfinder/erkan-istanbulluoglu)
 
@@ -50,11 +50,24 @@ Puget Sound Programming in Python (***[PuPPy](https://www.meetup.com/PSPPython/)
 
 Work experience
 ======
+
+***Water Resources Engineer/Numerical Modeler***
+Jacobs, Sacramento, CA  [Apr 2021 - Present]
+* Developing and applying cutting edge tools to support hydraulic, hydrologic, and hydrodynamic analyses for local, state, and federal agencies
+
+***Water Resources Engineer/Numerical Modeler***
+RMA Inc., Walnut Creek, CA  [Jan 2020 - Feb 2021]
+* Assisted federal agency for a time-critical project with the estimation of impacts of planned flow action scenarios on abiotic habitat of endangered fish species
+* Sourced, cleaned, and engineered data from 75+ field stations maintained by federal, state, and local agencies to calibrate and run 3D & 2D hydrodynamic simulations
+* Supported 3D hydrodynamic model development to estimate spatiotemporal velocity components in the river that effect juvenile fish passage through a weir at different river stages
+• Developed non-parametric models to correlate fish-food abundance and abiotic parameters
+• Created data-analysis and data-visualization pipelines in Python
+
 ***Research Assistant***, Department of Civil & Environmental Engineering
-University of Washington, Seattle, WA  [Sep 2012 - Present]
-* Core developer of Landlab, an open source Python toolkit for earth surface modeling
-* Developed components such as SoilMoisture, Vegetation, VegCA, LandslideProbability, and more
-* Developing numerical models to study the effects of topography, climate, and disturbances like wildfires and grazing on vegetation organization in semiarid areas of southwestern United States 
+University of Washington, Seattle, WA  [Sep 2012 - Dec 2019]
+* Developed novel multi-staged models in Python to investigate ecosystem sensitivity to topography, climate, and disturbances like wildfires
+* Predicted historical (past ~13k years) species abundance for a watershed in central New Mexico
+* Created geospatial and meteorological data-pipelines to infer temporal ecosystem states
 * Developed instructional tutorials for adaptation of ecohydrologic models developed in Landlab
 * Served as an instructor for workshops to help scientists and students adapt Landlab
 
