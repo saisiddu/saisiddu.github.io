@@ -8,12 +8,22 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I am Sai Nudurupati. I am a Ph.D. candidate in the [Watershed Dynamics lab](http://www.uwwatersheddynamics.com/), 
-Department of Civil & Environmental Engineering, University of Washington,
-Seattle. I am an Ecohydrologist, with a background in Mechanical Engineering.
+Hi! I am Sai Nudurupati. Thanks for visiting my website.
 
-I am studying how climate influences vegetation dynamics in semi-arid 
-landscapes of southwest United States. I use numerical modeling to 
+I am an engineer, numerical modeler, and data scientist. I aim to leverage data
+to address challenges in building ecosystem resilience to climate change
+and mitigating the effects of extreme events such as floods, wildfires, and droughts.
+I am currently working as a Water Resources Engineer at Jacobs, Sacramento, California.
+Here at Jacobs, I develop and apply cutting-edge tools to support hydraulic, hydrologic,
+and hydrodynamic analyses for local, state, and federal agencies. I previously worked
+as a Water Resources Engineer at Resource Management Associates (RMA).
+At RMA, I supported 2D and 3D hydrodynamic modeling of riverine, estuarine,
+and coastal ecosystems to study marine habitat health and flow dynamics
+in the Sacramento—San Joaquin River Delta, central California.
+
+I completed my Ph.D. in Civil & Environmental Engineering from the University of Washington, Seattle.
+During my Ph.D., I studied how climate influences vegetation dynamics in semi-arid 
+landscapes of southwest United States. I used numerical modeling to 
 investigate the influence of terrain characteristics, 
 climate, and disturbance (like wildfires and grazing) variability on 
 competition between various plant species, and the resulting 
