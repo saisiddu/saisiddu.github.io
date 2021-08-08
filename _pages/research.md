@@ -5,7 +5,7 @@ excerpt: "My Research"
 author_profile: true
 ---
 
-My research focuses on investigating the influence 
+My research focused on investigating the influence 
 of terrain characteristics, climate, and disturbance
 (like wildfires and grazing) variability on the vegetation
 organization, that is a resultant of competition between
@@ -14,14 +14,14 @@ For my study, I have explored semiarid and arid watersheds from
 [Sevilleta National Wildlife Refuge (SNWR)](https://www.fws.gov/refuge/sevilleta/) near Socorro, New Mexico,
 and [Barta Brother Ranch (BBR)](http://snr.unl.edu/aboutus/where/fieldsites/bartabrothersranch.aspx), Nebraska.
 
-My research workflow typically includes the following steps:
-* study about the current state of an ecosystem
-* visualize the current state by analyzing available observations
-* understand the processes involved
-* create multi-layered numerical models using ***[Landlab]( http://landlab.github.io/#/)***
-* calibrate the model and cross-check model performance with observations
-* create hypotheses and employ the models to forecast ecosystem response
-* repeat few or all of the above steps -> *'Re'search*
+My research workflow typically included the following steps:
+* studying about the current state of an ecosystem
+* visualizing the current state by analyzing available observations
+* understanding the processes involved
+* creating multi-layered numerical models using ***[Landlab]( http://landlab.github.io/#/)***
+* calibrating the model and cross-check model performance with observations
+* creating hypotheses and employ the models to forecast ecosystem response
+* repeating few or all of the above steps -> *'Re'search*
 
 In *Landlab*, earth surface processes are represented as *components*.
 To help myself and the community to quickly build ecohydrologic models,
